@@ -20,13 +20,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ChakraBaseProvider theme={theme}>
-        <body className={inter.className}>
+      <body className={inter.className}>
+        <ChakraBaseProvider theme={theme}>
           <Header />
           {children}
           <Footer />
-        </body>
-      </ChakraBaseProvider>
+        </ChakraBaseProvider>
+      </body>
     </html>
   );
 }
