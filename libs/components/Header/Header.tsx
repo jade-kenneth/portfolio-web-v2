@@ -1,13 +1,16 @@
 "use client";
 import { colors } from "@/libs/theme/colors";
+import { fontFamily } from "@/libs/theme/fonts-family";
 import {
   Box,
   Button,
   Flex,
+  Text,
   Heading,
   ListItem,
   UnorderedList,
 } from "@chakra-ui/react";
+import { NextFont } from "next/dist/compiled/@next/font";
 import Image from "next/image";
 import React from "react";
 
@@ -18,18 +21,19 @@ const Header = () => {
       alignItems={"center"}
       background={colors.background.primary}
       height={"80px"}
+      className={fontFamily["poppins.600"]}
     >
       <Flex listStyleType={"none"} gap="40px">
         <Image src="/Logo.png" alt="logo" width={170} height={100} />
 
         <Flex gap="32px">
-          <Heading>Home</Heading>
+          <Text>Home</Text>
 
-          <Heading>About</Heading>
+          <Text>About</Text>
 
-          <Heading>Skills</Heading>
+          <Text>Skills</Text>
 
-          <Heading>Work Experience</Heading>
+          <Text>Work Experience</Text>
         </Flex>
       </Flex>
       <Button variant={"solid"}>Contact Me</Button>
