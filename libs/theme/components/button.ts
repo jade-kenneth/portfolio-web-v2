@@ -28,4 +28,10 @@ export const Button: StyleConfig = {
       };
     },
   },
+  sizes: {
+    xs: { h: "36px", minW: "36px", rounded: "8px" },
+    sm: { h: "40px", minW: "40px", rounded: "8px" },
+    md: { h: "44px", minW: "131px", rounded: "8px" },
+    lg: { h: "60px", maxW: "154px", rounded: "8px" },
+  },
 };
