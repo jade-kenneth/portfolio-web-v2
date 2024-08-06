@@ -28,7 +28,7 @@ const Hero = () => {
               Contact Me
             </Button>
           </Flex>
-          <Flex flex={1} alignItems={"end"} h="full">
+          <Flex flex={1} alignItems={"end"} justifyContent={"center"} h="full">
             <CustomNextImage
               src="/Me.png"
               width={"392px"}

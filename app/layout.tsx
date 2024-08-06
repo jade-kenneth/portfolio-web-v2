@@ -1,9 +1,8 @@
-import CustomNextImage from "@/libs/components/CustomNextImage/CustomNextImage";
+import BackgroundAnimation from "@/libs/components/BackgroundAnimation/BackgroundAnimation";
 import Footer from "@/libs/components/Footer/Footer";
 import Header from "@/libs/components/Header/Header";
 import { theme } from "@/libs/theme";
-import { colors } from "@/libs/theme/colors";
-import { ChakraBaseProvider, Flex } from "@chakra-ui/react";
+import { ChakraBaseProvider } from "@chakra-ui/react";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -21,31 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ChakraBaseProvider theme={theme}>
-          <Flex
-            w="full"
-            bgColor={colors.background.primary}
-            position={"absolute"}
-            zIndex={0}
-            mt="80px"
-            h={"1206px"}
-          >
-            <Flex w="full" overflow={"hidden"}>
-              <Flex flex={1.08} />
-              <Flex flex={1} w="full" h={"full"} overflow={"hidden"}>
-                <Flex
-                  w="inherit"
-                  h="full"
-                  gap="10px"
-                  overflow={"hidden"}
-                  direction="column"
-                  className="block1"
-                >
-                  <CustomNextImage src="/10.png" w="full" h="612px" />
-                  <CustomNextImage src="/10.png" w="full" h="612px" />
-                </Flex>
-              </Flex>
-            </Flex>
-          </Flex>
+          <BackgroundAnimation />
           <Header />
           {children}
           <Footer />
