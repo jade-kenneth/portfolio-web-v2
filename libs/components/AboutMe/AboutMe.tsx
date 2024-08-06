@@ -1,7 +1,12 @@
-import React from "react";
+import { colors } from "@/libs/theme/colors";
+import OuterContentWrapper from "../OuterContentWrapper/OuterContentWrapper";
 
 const AboutMe = () => {
-  return <div>About Me</div>;
+  return (
+    <OuterContentWrapper background={colors.background.primary} h={"612px"}>
+      hello about me
+    </OuterContentWrapper>
+  );
 };
 
 export default AboutMe;

@@ -1,27 +1,10 @@
-import { colors } from "@/libs/theme/colors";
-import { Button, Flex, Text, keyframes } from "@chakra-ui/react";
+import { Button, Flex, Text } from "@chakra-ui/react";
 import CustomNextImage from "../CustomNextImage/CustomNextImage";
 import InnerContentWrapper from "../InnerContentWrapper/InnerContentWrapper";
 import OuterContentWrapper from "../OuterContentWrapper/OuterContentWrapper";
 const Hero = () => {
-  const slideRight = keyframes`  
-  from {  transform: translateX(-50%)}   
-  to { transform: translateX(0%)} 
-`;
-  const slideAnimation = `${slideRight} infinite 3s linear`;
   return (
-    <OuterContentWrapper background={colors.background.primary} h={"612px"}>
-      <Flex w="full" h={"full"}>
-        <Flex flex={1.08} />
-        <Flex flex={1} w="full" h={"full"} overflow={"hidden"}>
-          <Flex w="inherit" h="full" animation={slideAnimation}>
-            <CustomNextImage src="/10.png" w="1300px" h="inherit" />
-          </Flex>
-          <Flex w="inherit" h="full" animation={slideAnimation}>
-            <CustomNextImage src="/10.png" w="1300px" h="inherit" />
-          </Flex>
-        </Flex>
-      </Flex>
+    <OuterContentWrapper background={"transparent"} h={"612px"}>
       <InnerContentWrapper
         position={"absolute"}
         bg="transparent"
