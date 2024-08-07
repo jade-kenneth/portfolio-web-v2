@@ -20,5 +20,15 @@ export const Text: StyleConfig = {
       fontWeight: "400",
       lineHeight: "36px",
     },
+    "paragraph-md": {
+      fontSize: "20px",
+      fontWeight: "400",
+      lineHeight: "32px",
+    },
+    "header-2": {
+      fontSize: "40px",
+      fontWeight: "600",
+      lineHeight: "48px",
+    },
   },
 };

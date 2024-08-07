@@ -33,5 +33,6 @@ export const Button: StyleConfig = {
     sm: { h: "40px", minW: "40px", rounded: "8px" },
     md: { h: "44px", minW: "131px", rounded: "8px" },
     lg: { h: "60px", maxW: "154px", rounded: "8px" },
+    xl: { h: "60px", maxW: "219px", rounded: "8px" },
   },
 };
