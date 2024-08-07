@@ -58,9 +58,9 @@ const AboutMe = () => {
               of Science in Computer Science and have spent the past few years
               honing my skills and working on diverse web development projects.
               I’m excited to bring my experience and passion to new
-              opportunities. Let’s create something extraordinary together Want
-              to know more? Download my resume to see my detailed experience and
-              skills.
+              opportunities. Let’s create something extraordinary together.{" "}
+              <br /> <br /> Want to know more? Download my resume to see my
+              detailed experience and skills.
             </Text>
             <Button
               size="xl"
@@ -93,7 +93,7 @@ const AboutMe = () => {
               <CustomNextImage
                 src="/line.png"
                 zIndex={0}
-                mr="400px"
+                mr="300px"
                 width={"8px"}
                 height="13px"
               />
@@ -175,7 +175,7 @@ const Card: FC<CardProps> = ({ desc, imgSrc, title, year }) => {
     <Flex
       position={"absolute"}
       gap="24px"
-      right="125px"
+      right="25px"
       w="321px"
       alignItems={"center"}
       zIndex={1}
