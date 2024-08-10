@@ -21,8 +21,8 @@ import {
 import InnerContentWrapper from "../InnerContentWrapper/InnerContentWrapper";
 import OuterContentWrapper from "../OuterContentWrapper/OuterContentWrapper";
 const Skillsets = () => {
-  const animation = { duration: 15000, easing: (t: any) => t };
-  const [sliderRef, instanceRef] = useKeenSlider(
+  const animation = { duration: 15000, easing: (t: number) => t };
+  const [sliderRef] = useKeenSlider(
     {
       loop: true,
       renderMode: "performance",
