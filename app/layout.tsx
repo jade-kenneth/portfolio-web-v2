@@ -1,4 +1,4 @@
-import BackgroundAnimation from "@/libs/components/BackgroundAnimation/BackgroundAnimation";
+import HeroBackgroundAnimation from "@/libs/components/BackgroundAnimation/HeroBackgroundAnimation";
 import Footer from "@/libs/components/Footer/Footer";
 import Header from "@/libs/components/Header/Header";
 import { theme } from "@/libs/theme";
@@ -20,9 +20,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ChakraBaseProvider theme={theme}>
-          <BackgroundAnimation />
+          <HeroBackgroundAnimation />
           <Header />
           {children}
+          {/* <SkillsetBackgroundAnimation /> */}
           <Footer />
         </ChakraBaseProvider>
       </body>

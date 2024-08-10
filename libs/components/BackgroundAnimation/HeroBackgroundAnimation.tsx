@@ -2,13 +2,13 @@ import { colors } from "@/libs/theme/colors";
 import { Flex } from "@chakra-ui/react";
 import CustomNextImage from "../CustomNextImage/CustomNextImage";
 
-const BackgroundAnimation = () => {
+const HeroBackgroundAnimation = () => {
   return (
     <Flex
       w="full"
       bgColor={colors.background.primary}
       position={"absolute"}
-      zIndex={0}
+      zIndex={-1}
       mt="80px"
       h={"1300px"}
     >
@@ -32,4 +32,4 @@ const BackgroundAnimation = () => {
   );
 };
 
-export default BackgroundAnimation;
+export default HeroBackgroundAnimation;

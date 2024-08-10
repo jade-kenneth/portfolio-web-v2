@@ -19,6 +19,7 @@
 body {
   color: white;
   overflow-x: hidden;
+
   background: linear-gradient(
       to bottom,
       transparent,
