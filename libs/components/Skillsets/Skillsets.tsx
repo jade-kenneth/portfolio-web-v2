@@ -116,7 +116,7 @@ const Skillsets = () => {
 
           <FaGithub
             className="keen-slider__slide"
-            style={{ color: "#000000", fontSize: "8rem" }}
+            style={{ color: "white", fontSize: "8rem" }}
           />
 
           <SiJsonwebtokens
@@ -126,7 +126,7 @@ const Skillsets = () => {
 
           <SiSocketdotio
             className="keen-slider__slide"
-            style={{ color: "#000100", fontSize: "8rem" }}
+            style={{ color: "white", fontSize: "8rem" }}
           />
         </div>
       </InnerContentWrapper>
