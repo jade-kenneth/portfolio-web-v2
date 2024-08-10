@@ -12,6 +12,7 @@ import {
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FC } from "react";
+import { MdOutlineArrowOutward } from "react-icons/md";
 import CustomNextImage from "../CustomNextImage/CustomNextImage";
 import InnerContentWrapper from "../InnerContentWrapper/InnerContentWrapper";
 import OuterContentWrapper from "../OuterContentWrapper/OuterContentWrapper";
@@ -158,14 +159,16 @@ const Card: FC<CardProps> = ({
       <Flex align={"center"} justify={"space-between"} mb="1rem">
         <Flex align={"center"} gap={"10px"}>
           <CustomNextImage src={logoSrc} w="59.45px" h="59.45px" />
-          <Text>{name}</Text>
+          <Text size="label-md">{name}</Text>
         </Flex>
         <Link href={linkSrc} target="blank">
-          <Button variant={"solid"}>Website</Button>
+          <Button variant={"unstyled"} rightIcon={<MdOutlineArrowOutward />}>
+            Website
+          </Button>
         </Link>
       </Flex>
-      <Text>{desc}</Text>
-      <CustomNextImage src={thumbnail} mt="24px" w="325.67px" h="227px" />
+      <Text size="paragraph-sm">{desc}</Text>
+      <CustomNextImage src={thumbnail} mt="24px" w="full" h="227px" />
     </Flex>
   );
 };

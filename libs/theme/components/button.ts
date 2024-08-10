@@ -27,6 +27,15 @@ export const Button: StyleConfig = {
         borderRadius: "8px",
       };
     },
+    unstyled() {
+      return {
+        bg: "white",
+        color: "black",
+        py: "10px",
+        px: "16px",
+        borderRadius: "8px",
+      };
+    },
   },
   sizes: {
     xs: { h: "36px", minW: "36px", rounded: "8px" },

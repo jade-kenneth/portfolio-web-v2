@@ -25,10 +25,20 @@ export const Text: StyleConfig = {
       fontWeight: "400",
       lineHeight: "32px",
     },
+    "paragraph-sm": {
+      fontSize: "12px",
+      fontWeight: "400px",
+      lineHeight: "20px",
+    },
     "header-2": {
       fontSize: "40px",
       fontWeight: "600",
       lineHeight: "48px",
+    },
+    "label-md": {
+      fontSize: "20px",
+      fontWeight: "500",
+      lineHeight: "32px",
     },
   },
 };
