@@ -1,6 +1,5 @@
 "use client";
 import { colors } from "@/libs/theme/colors";
-import { fontFamily } from "@/libs/theme/fonts-family";
 import { Button, Flex, Text } from "@chakra-ui/react";
 
 import Image from "next/image";
@@ -10,11 +9,7 @@ import OuterContentWrapper from "../OuterContentWrapper/OuterContentWrapper";
 
 const Header = () => {
   return (
-    <OuterContentWrapper
-      background={colors.background.primary}
-      height={"80px"}
-      className={fontFamily["poppins.600"]}
-    >
+    <OuterContentWrapper background={colors.background.primary} height={"80px"}>
       <InnerContentWrapper
         justifyContent={"space-between"}
         alignItems={"center"}
@@ -23,16 +18,16 @@ const Header = () => {
           <Image src="/Logo.png" alt="logo" width={170} height={100} />
 
           <Flex gap="32px">
-            <Text>Home</Text>
+            <Text fontWeight={600}>Home</Text>
 
-            <Text>About</Text>
+            <Text fontWeight={600}>About</Text>
 
-            <Text>Skills</Text>
+            <Text fontWeight={600}>Skills</Text>
 
-            <Text>Work Experience</Text>
+            <Text fontWeight={600}>Work Experience</Text>
           </Flex>
         </Flex>
-        <Button variant={"solid"} size={"md"}>
+        <Button variant={"solid"} size={"md"} fontWeight={600}>
           Contact Me
         </Button>
       </InnerContentWrapper>

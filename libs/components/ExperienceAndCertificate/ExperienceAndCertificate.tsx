@@ -10,7 +10,6 @@ import {
   Text,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { FC } from "react";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import CustomNextImage from "../CustomNextImage/CustomNextImage";
@@ -55,7 +54,7 @@ const ExperienceAndCertificate = () => {
       thumbnail: "/exp-thumbnail-1.png",
     },
   ];
-  const router = useRouter();
+
   return (
     <OuterContentWrapper
       justify={"unset"}
@@ -71,6 +70,7 @@ const ExperienceAndCertificate = () => {
         w="full"
         display={"flex"}
         direction={"column"}
+        mb="37px"
       >
         <Text size="header-2" mb="1rem">
           Professional Experience & Certifications
@@ -78,7 +78,7 @@ const ExperienceAndCertificate = () => {
         <Text
           size="paragraph-md"
           mb="60px"
-          w="720px"
+          w="620px"
           textAlign={"center"}
           color="rgba(255, 255, 255, 0.8)"
         >

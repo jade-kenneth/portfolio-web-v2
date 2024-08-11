@@ -2,6 +2,7 @@ import HeroBackgroundAnimation from "@/libs/components/BackgroundAnimation/HeroB
 import Footer from "@/libs/components/Footer/Footer";
 import Header from "@/libs/components/Header/Header";
 import { theme } from "@/libs/theme";
+import { fontFamily } from "@/libs/theme/fonts-family";
 import { ChakraBaseProvider } from "@chakra-ui/react";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -18,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={fontFamily["poppins.400"]}>
         <ChakraBaseProvider theme={theme}>
           <HeroBackgroundAnimation />
           <Header />
