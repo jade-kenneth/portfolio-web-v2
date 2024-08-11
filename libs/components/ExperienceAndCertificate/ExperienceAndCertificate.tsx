@@ -26,32 +26,32 @@ const ExperienceAndCertificate = () => {
       thumbnail: "/exp-thumbnail-1.png",
     },
     {
-      desc: "Expert coaching boosts remote teams by driving growth, increasing productivity, and enhancing team morale.",
-      name: "Advante",
-      linkSrc: "https://studio-advante-git-request-fix-highoutput.vercel.app/",
-      logoSrc: "/exp-logo-1.png",
-      thumbnail: "/exp-thumbnail-1.png",
+      desc: "DevLuvs makes developer-focused content creation effortless. Just paste, publish, and let your code shine",
+      name: "Devluvs",
+      linkSrc: "https://studio-devluvs-highoutput.vercel.app/",
+      logoSrc: "/exp-logo-2.png",
+      thumbnail: "/exp-thumbnail-2.png",
     },
     {
-      desc: "Expert coaching boosts remote teams by driving growth, increasing productivity, and enhancing team morale.",
-      name: "Advante",
-      linkSrc: "https://studio-advante-git-request-fix-highoutput.vercel.app/",
-      logoSrc: "/exp-logo-1.png",
-      thumbnail: "/exp-thumbnail-1.png",
+      desc: "FB Clone",
+      name: "FB Clone",
+      linkSrc: "https://jade-kenneth.github.io/",
+      logoSrc: "/exp-logo-3.png",
+      thumbnail: "/exp-thumbnail-3.png",
     },
     {
-      desc: "Expert coaching boosts remote teams by driving growth, increasing productivity, and enhancing team morale.",
-      name: "Advante",
-      linkSrc: "https://studio-advante-git-request-fix-highoutput.vercel.app/",
-      logoSrc: "/exp-logo-1.png",
-      thumbnail: "/exp-thumbnail-1.png",
+      desc: "Share your thoughts and discuss with diverse communities and interests!",
+      name: "Blog V1",
+      linkSrc: "https://blogdevsitever1.netlify.app/",
+      logoSrc: "/exp-logo-4.png",
+      thumbnail: "/exp-thumbnail-4.png",
     },
     {
-      desc: "Expert coaching boosts remote teams by driving growth, increasing productivity, and enhancing team morale.",
-      name: "Advante",
-      linkSrc: "https://studio-advante-git-request-fix-highoutput.vercel.app/",
-      logoSrc: "/exp-logo-1.png",
-      thumbnail: "/exp-thumbnail-1.png",
+      desc: "Amy Store is an eCommerce site offering a seamless shopping experience with a diverse product range.",
+      name: "Amy Store",
+      linkSrc: "https://amystore.netlify.app/",
+      logoSrc: "/exp-logo-5.png",
+      thumbnail: "/exp-thumbnail-5.png",
     },
   ];
 
@@ -156,7 +156,7 @@ const Card: FC<CardProps> = ({
       borderRadius={"12px"}
       p="32px"
     >
-      <Flex align={"center"} justify={"space-between"} mb="1rem">
+      <Flex flex={0.1} align={"center"} justify={"space-between"} mb="1rem">
         <Flex align={"center"} gap={"10px"}>
           <CustomNextImage src={logoSrc} w="59.45px" h="59.45px" />
           <Text size="label-md">{name}</Text>
@@ -167,8 +167,12 @@ const Card: FC<CardProps> = ({
           </Button>
         </Link>
       </Flex>
-      <Text size="paragraph-sm">{desc}</Text>
-      <CustomNextImage src={thumbnail} mt="24px" w="full" h="227px" />
+      <Text flex={0.2} size="paragraph-sm">
+        {desc}
+      </Text>
+      <Flex flex={0.7} align={"end"}>
+        <CustomNextImage src={thumbnail} mt="24px" w="full" h="227px" />
+      </Flex>
     </Flex>
   );
 };
