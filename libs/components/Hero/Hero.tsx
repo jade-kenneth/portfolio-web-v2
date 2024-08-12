@@ -20,9 +20,9 @@ const Hero = () => {
               </Text>
             </Text>
             <Text size="paragraph-lg" mb="32px">
-              I&apos;m an aspiring web developer with a passion for crafting
-              innovative and user-friendly digital experiences. Let’s bring your
-              vision to life!
+              I&apos;m a web developer with a passion for crafting innovative
+              and user-friendly digital experiences. Let’s bring your vision to
+              life!
             </Text>
             <Button variant={"solid"} size={"lg"}>
               Contact Me
