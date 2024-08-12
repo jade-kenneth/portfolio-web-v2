@@ -31,7 +31,11 @@ const AboutMe = () => {
     // }
   }, [animation]);
   return (
-    <OuterContentWrapper background={colors.background.secondary} h={"974px"}>
+    <OuterContentWrapper
+      id="aboutme"
+      background={colors.background.secondary}
+      h={"974px"}
+    >
       <InnerContentWrapper>
         <Flex flex={1} h="inherit" w="full">
           <Flex

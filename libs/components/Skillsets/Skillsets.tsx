@@ -49,6 +49,7 @@ const Skillsets = () => {
   return (
     <OuterContentWrapper
       height="417px"
+      id="skills"
       bgImage={"/101-slide-right.png"}
       bgColor={colors.background.primary}
     >

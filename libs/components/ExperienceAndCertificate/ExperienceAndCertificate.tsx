@@ -53,11 +53,26 @@ const ExperienceAndCertificate = () => {
       logoSrc: "/exp-logo-5.png",
       thumbnail: "/exp-thumbnail-5.png",
     },
+    {
+      desc: "Internship project at Highoutput Ventures",
+      name: "Pokedex",
+      linkSrc: "https://pokedex-intern-project.vercel.app/",
+      logoSrc: "/exp-logo-6.png",
+      thumbnail: "/exp-thumbnail-6.png",
+    },
+    {
+      desc: "Portfolio old version",
+      name: "Portfolio V1",
+      linkSrc: "https://darundaywebdev.netlify.app/",
+      logoSrc: "/exp-logo-7.png",
+      thumbnail: "/exp-thumbnail-7.png",
+    },
   ];
 
   return (
     <OuterContentWrapper
       justify={"unset"}
+      id="workexperience"
       align={"unset"}
       w="full"
       bgColor={colors.background.secondary}
@@ -158,7 +173,13 @@ const Card: FC<CardProps> = ({
     >
       <Flex flex={0.1} align={"center"} justify={"space-between"} mb="1rem">
         <Flex align={"center"} gap={"10px"}>
-          <CustomNextImage src={logoSrc} w="59.45px" h="59.45px" />
+          <CustomNextImage
+            src={logoSrc}
+            borderRadius={"50%"}
+            overflow={"hidden"}
+            w="59.45px"
+            h="59.45px"
+          />
           <Text size="label-md">{name}</Text>
         </Flex>
         <Link href={linkSrc} target="blank">

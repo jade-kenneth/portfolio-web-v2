@@ -4,6 +4,7 @@ import { Button, Flex, Text } from "@chakra-ui/react";
 
 import Image from "next/image";
 
+import Link from "next/link";
 import InnerContentWrapper from "../InnerContentWrapper/InnerContentWrapper";
 import OuterContentWrapper from "../OuterContentWrapper/OuterContentWrapper";
 
@@ -18,13 +19,16 @@ const Header = () => {
           <Image src="/Logo.png" alt="logo" width={170} height={100} />
 
           <Flex gap="32px">
-            <Text fontWeight={600}>Home</Text>
-
-            <Text fontWeight={600}>About</Text>
-
-            <Text fontWeight={600}>Skills</Text>
-
-            <Text fontWeight={600}>Work Experience</Text>
+            {/* <Text fontWeight={600}>Home</Text> */}
+            <Link href="#aboutme">
+              <Text fontWeight={600}>About</Text>
+            </Link>
+            <Link href="#skills">
+              <Text fontWeight={600}>Skills</Text>
+            </Link>
+            <Link href="#workexperience">
+              <Text fontWeight={600}>Work Experience</Text>
+            </Link>
           </Flex>
         </Flex>
         <Button variant={"solid"} size={"md"} fontWeight={600}>
