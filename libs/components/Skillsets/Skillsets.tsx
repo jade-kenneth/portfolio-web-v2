@@ -1,5 +1,5 @@
 import { colors } from "@/libs/theme/colors";
-import { Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import { DiMongodb } from "react-icons/di";
@@ -67,9 +67,16 @@ const Skillsets = () => {
         align={"center"}
         maxW={"unset"}
       >
-        <Text size="header-2" mb="64px">
-          My Current Skillset
-        </Text>
+        <Flex
+          justifyContent={"center"}
+          h="fit-content"
+          gap={"10px"}
+          alignItems={"center"}
+          mb="64px"
+        >
+          <Text size="header-2">Technical Arsenals</Text>
+          {/* <FaLaptopCode style={{ fontSize: "2.5rem" }} /> */}
+        </Flex>
         <div
           ref={sliderRef}
           style={{

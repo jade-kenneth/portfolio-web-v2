@@ -115,13 +115,15 @@ const ExperienceAndCertificate = () => {
             >
               Work Experience
             </Tab>
-            <Tab
+            {/* <Tab
               _selected={{ color: colors.primary[900], fontWeight: 700 }}
               fontSize={"20px"}
               color={"rgba(255, 255, 255, 0.4)"}
+              _disabled={{ cursor: "not-allowed" }}
+              disabled={true}
             >
               Certificates Earned
-            </Tab>
+            </Tab> */}
           </TabList>
           <TabPanels>
             <TabPanel
