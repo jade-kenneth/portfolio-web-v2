@@ -12,11 +12,18 @@ import {
   FaReact,
   FaSass,
 } from "react-icons/fa";
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import {
+  SiApollographql,
+  SiChakraui,
   SiJavascript,
   SiJsonwebtokens,
+  SiLighthouse,
+  SiReactquery,
   SiRedux,
   SiSocketdotio,
+  SiStrapi,
+  SiTypescript,
 } from "react-icons/si";
 import InnerContentWrapper from "../InnerContentWrapper/InnerContentWrapper";
 import OuterContentWrapper from "../OuterContentWrapper/OuterContentWrapper";
@@ -128,6 +135,39 @@ const Skillsets = () => {
           <SiSocketdotio
             className="keen-slider__slide"
             style={{ color: "white", fontSize: "8rem" }}
+          />
+          <RiNextjsFill className="keen-slider__slide" />
+          <SiTypescript
+            className="keen-slider__slide"
+            style={{ color: "rgb(47,116,192)" }}
+          />
+          <SiApollographql
+            className="keen-slider__slide"
+            style={{ color: "rgb(69,39,188)" }}
+          />
+          <RiTailwindCssFill
+            className="keen-slider__slide"
+            style={{ color: "rgb(56,189,248)" }}
+          />
+          <SiChakraui
+            className="keen-slider__slide"
+            style={{ color: "rgb(93,201,202)" }}
+          />
+          <SiReactquery
+            className="keen-slider__slide"
+            style={{ color: "rgb(255,71,89)" }}
+          />
+          <SiLighthouse
+            className="keen-slider__slide"
+            style={{ color: "rgb(255,107,57)" }}
+          />
+          <SiStrapi
+            className="keen-slider__slide"
+            style={{
+              color: "rgb(79,75,255)",
+              backgroundColor: "white",
+              borderRadius: "35px",
+            }}
           />
         </div>
       </InnerContentWrapper>
