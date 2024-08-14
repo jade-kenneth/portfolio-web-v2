@@ -1,11 +1,63 @@
+import { db } from "@/firebaseConfig";
 import { colors } from "@/libs/theme/colors";
-import { Box, Button, Flex, Input, Text, Textarea } from "@chakra-ui/react";
+import { notify, ToastContent } from "@/libs/utils/toast";
+import { Box, Button, Flex, Text, useToast } from "@chakra-ui/react";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { addDoc, collection } from "firebase/firestore";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { FormSchema } from "../commons/FormSchema";
 import CustomNextImage from "../CustomNextImage/CustomNextImage";
-import FormContainer from "../FormFields/FormContainer";
+import InputField from "../FormFields/InputField";
+import TextareaField from "../FormFields/TextAreaField";
 import InnerContentWrapper from "../InnerContentWrapper/InnerContentWrapper";
 import OuterContentWrapper from "../OuterContentWrapper/OuterContentWrapper";
 
+type Schema = yup.InferType<typeof FormSchema>;
 const ContactUs = () => {
+  const {
+    handleSubmit,
+    register,
+    formState: { errors, isLoading, isSubmitting },
+  } = useForm<Schema>({
+    mode: "all",
+    resolver: yupResolver(FormSchema),
+    defaultValues: {
+      email: "",
+      firstName: "",
+      message: "",
+    },
+  });
+  const toast = useToast();
+  const subscribe = async (value: Schema) => {
+    try {
+      await addDoc(collection(db, "buildRequests"), {
+        email: value.email,
+        firstName: value.firstName,
+        message: value.message,
+      });
+      toast({
+        position: "top",
+        render: ({ onClose }) => {
+          return (
+            <ToastContent
+              title="Success"
+              description="Submitted successfully!"
+              onClose={onClose}
+            />
+          );
+        },
+      });
+      // notify("Successfully submitted", { status: "success" });
+    } catch (error) {
+      notify("Something went wrong. Please try again!", {
+        status: "error",
+      });
+    }
+  };
+  const onSubmit = (value: Schema) => {
+    subscribe(value);
+  };
   return (
     <OuterContentWrapper
       bg={colors.background.secondary}
@@ -28,7 +80,7 @@ const ContactUs = () => {
           direction={"column"}
           bg={colors.background.primary}
         >
-          <Box w="480px">
+          <Box as="form" onSubmit={handleSubmit(onSubmit)} w="480px">
             <Text size={"header-2"} mb="20px">
               Ready to Build Something Amazing?
             </Text>
@@ -40,55 +92,65 @@ const ContactUs = () => {
               If you’re looking to start a project together, send me an email by
               filling out the form below. Let’s bring your vision to life!
             </Text>
-
-            <FormContainer
+            <InputField
+              {...register("firstName")}
+              id="firstName"
               label="First name"
-              id={"firstName"}
-              formControlProps={{ mb: "24px" }}
-            >
-              <Input
-                type={"text"}
-                height={"44px"}
-                placeholder="First name"
-                py="10px"
-                w="full"
-                color="black"
-                px="14px"
-                borderRadius={"8px"}
-              />
-            </FormContainer>
-            <FormContainer
+              errorMsg={errors.firstName?.message ?? ""}
+              formControlProps={{ mb: "25px" }}
+              chakraInputProps={{
+                px: "14px",
+                color: "black",
+                type: "text",
+                placeholder: "First name",
+                borderRadius: "8px",
+                w: "full",
+                py: "10px",
+                height: "44px",
+              }}
+            />
+            <InputField
+              {...register("email")}
+              id="email"
               label="Email"
-              id={"email"}
-              formControlProps={{ mb: "24px" }}
-            >
-              <Input
-                type={"email"}
-                height={"44px"}
-                placeholder="your@email.com"
-                py="10px"
-                color="black"
-                px="14px"
-                w="full"
-                borderRadius={"8px"}
-              />
-            </FormContainer>
-            <FormContainer
+              errorMsg={errors.email?.message ?? ""}
+              formControlProps={{ mb: "20px" }}
+              chakraInputProps={{
+                px: "14px",
+                color: "black",
+
+                borderRadius: "8px",
+                w: "full",
+                placeholder: "your@email.com",
+                py: "10px",
+
+                height: "44px",
+              }}
+            />
+
+            <TextareaField
+              {...register("message")}
+              id="message"
               label="Message"
-              id={"message"}
-              formControlProps={{ mb: "24px" }}
+              formControlProps={{ mb: "20px" }}
+              errorMsg={errors.message?.message ?? ""}
+              chakraTextAreaProps={{
+                px: "14px",
+                color: "black",
+                borderRadius: "8px",
+                w: "full",
+                placeholder: "Must have at least 100 characters",
+                py: "10px",
+                height: "134px",
+              }}
+            />
+
+            <Button
+              type="submit"
+              isLoading={isLoading || isSubmitting}
+              variant="solid"
+              w="full"
             >
-              <Textarea
-                height={"134px"}
-                placeholder="Must have at least 100 characters"
-                py="10px"
-                color="black"
-                px="14px"
-                w="full"
-                borderRadius={"8px"}
-              />
-            </FormContainer>
-            <Button variant="solid" w="full">
               Submit Request
             </Button>
           </Box>

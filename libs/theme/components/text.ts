@@ -1,4 +1,3 @@
-"use client";
 import { StyleConfig } from "@chakra-ui/react";
 
 export const Text: StyleConfig = {
