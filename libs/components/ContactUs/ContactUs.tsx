@@ -1,6 +1,6 @@
 import { db } from "@/firebaseConfig";
 import { colors } from "@/libs/theme/colors";
-import { notify, ToastContent } from "@/libs/utils/toast";
+import { ToastContent } from "@/libs/utils/toast";
 import { Box, Button, Flex, Text, useToast } from "@chakra-ui/react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { addDoc, collection } from "firebase/firestore";
@@ -18,6 +18,7 @@ const ContactUs = () => {
   const {
     handleSubmit,
     register,
+    reset,
     formState: { errors, isLoading, isSubmitting },
   } = useForm<Schema>({
     mode: "all",
@@ -36,6 +37,7 @@ const ContactUs = () => {
         firstName: value.firstName,
         message: value.message,
       });
+      reset();
       toast({
         position: "top",
         render: ({ onClose }) => {
@@ -48,10 +50,19 @@ const ContactUs = () => {
           );
         },
       });
-      // notify("Successfully submitted", { status: "success" });
     } catch (error) {
-      notify("Something went wrong. Please try again!", {
-        status: "error",
+      toast({
+        position: "top",
+        render: ({ onClose }) => {
+          return (
+            <ToastContent
+              status="error"
+              title="Error"
+              description="Something went wrong. Please try again!"
+              onClose={onClose}
+            />
+          );
+        },
       });
     }
   };
