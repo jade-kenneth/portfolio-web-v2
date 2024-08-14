@@ -1,3 +1,4 @@
+import { colors } from "@/libs/theme/colors";
 import { Input, InputProps } from "@chakra-ui/react";
 import { forwardRef, ReactNode } from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
@@ -26,6 +27,7 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
           {...chakraInputProps}
           ref={ref}
           onChange={onChange}
+          _focus={{ outline: `2px solid ${colors.primary[900]}` }}
           onBlur={onBlur}
           name={name}
           onKeyPress={(e) => {
