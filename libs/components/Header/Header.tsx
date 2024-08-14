@@ -31,9 +31,11 @@ const Header = () => {
             </Link>
           </Flex>
         </Flex>
-        <Button variant={"solid"} size={"md"} fontWeight={600}>
-          Contact Me
-        </Button>
+        <Link href="#contactme">
+          <Button variant={"solid"} size={"md"} fontWeight={600}>
+            Contact Me
+          </Button>
+        </Link>
       </InnerContentWrapper>
     </OuterContentWrapper>
   );

@@ -73,6 +73,7 @@ const ContactUs = () => {
     <OuterContentWrapper
       bg={colors.background.secondary}
       padding={"unset"}
+      id="contactme"
       pb="99.5px"
     >
       <InnerContentWrapper

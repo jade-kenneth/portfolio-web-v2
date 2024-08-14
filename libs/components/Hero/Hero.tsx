@@ -1,4 +1,5 @@
 import { Button, Flex, Text } from "@chakra-ui/react";
+import Link from "next/link";
 import CustomNextImage from "../CustomNextImage/CustomNextImage";
 import InnerContentWrapper from "../InnerContentWrapper/InnerContentWrapper";
 import OuterContentWrapper from "../OuterContentWrapper/OuterContentWrapper";
@@ -24,9 +25,11 @@ const Hero = () => {
               and user-friendly digital experiences. Let’s bring your vision to
               life!
             </Text>
-            <Button variant={"solid"} size={"lg"}>
-              Contact Me
-            </Button>
+            <Link href="#contactme">
+              <Button variant={"solid"} size={"lg"}>
+                Contact Me
+              </Button>
+            </Link>
           </Flex>
           <Flex flex={1} alignItems={"end"} justifyContent={"center"} h="full">
             <CustomNextImage

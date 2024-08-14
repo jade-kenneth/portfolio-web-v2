@@ -30,9 +30,11 @@ const Footer = () => {
               </Link>
             </Flex>
           </VStack>
-          <Button size={"sm"} variant="solid">
-            Contact Me
-          </Button>
+          <Link href="#contactme">
+            <Button size={"sm"} variant="solid">
+              Contact Me
+            </Button>
+          </Link>
         </Flex>
 
         <Flex
