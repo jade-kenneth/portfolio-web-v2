@@ -172,7 +172,6 @@ const Skillsets = () => {
             className="keen-slider__slide"
             style={{
               color: "rgb(79,75,255)",
-              backgroundColor: "white",
               borderRadius: "35px",
             }}
           />
