@@ -1,7 +1,10 @@
+"use client";
+
 import { colors } from "@/libs/theme/colors";
-import { Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
+import type { IconType } from "react-icons";
 import { DiMongodb } from "react-icons/di";
 import {
   FaCss3,
@@ -27,6 +30,36 @@ import {
 } from "react-icons/si";
 import InnerContentWrapper from "../InnerContentWrapper/InnerContentWrapper";
 import OuterContentWrapper from "../OuterContentWrapper/OuterContentWrapper";
+
+type SkillItem = {
+  name: string;
+  icon: IconType;
+  color: string;
+};
+
+const skillItems: SkillItem[] = [
+  { name: "JavaScript", icon: SiJavascript, color: "#EED81C" },
+  { name: "HTML5", icon: FaHtml5, color: "#DF4716" },
+  { name: "CSS3", icon: FaCss3, color: "#2194F0" },
+  { name: "Sass", icon: FaSass, color: "#C96195" },
+  { name: "React", icon: FaReact, color: "#50BBD7" },
+  { name: "Redux", icon: SiRedux, color: "#7348B7" },
+  { name: "MongoDB", icon: DiMongodb, color: "#87D144" },
+  { name: "Node.js", icon: FaNodeJs, color: "#88C249" },
+  { name: "Git", icon: FaGit, color: "#E94F30" },
+  { name: "GitHub", icon: FaGithub, color: "#FFFFFF" },
+  { name: "JWT", icon: SiJsonwebtokens, color: "#CE38F6" },
+  { name: "Socket.IO", icon: SiSocketdotio, color: "#FFFFFF" },
+  { name: "Next.js", icon: RiNextjsFill, color: "#FFFFFF" },
+  { name: "TypeScript", icon: SiTypescript, color: "rgb(47,116,192)" },
+  { name: "Apollo GraphQL", icon: SiApollographql, color: "rgb(69,39,188)" },
+  { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "rgb(56,189,248)" },
+  { name: "Chakra UI", icon: SiChakraui, color: "rgb(93,201,202)" },
+  { name: "React Query", icon: SiReactquery, color: "rgb(255,71,89)" },
+  { name: "Lighthouse", icon: SiLighthouse, color: "rgb(255,107,57)" },
+  { name: "Strapi", icon: SiStrapi, color: "rgb(79,75,255)" },
+];
+
 const Skillsets = () => {
   const animation = { duration: 15000, easing: (t: number) => t };
   const [sliderRef] = useKeenSlider(
@@ -53,129 +86,129 @@ const Skillsets = () => {
       // add plugins here
     ]
   );
+
   return (
     <OuterContentWrapper
-      height="417px"
+      minH={{ base: "440px", md: "460px" }}
       id="skills"
       bgImage={"/101-slide-right.png"}
       bgColor={colors.background.primary}
+      position={"relative"}
+      overflow={"hidden"}
     >
+      <Box
+        position={"absolute"}
+        top={"-140px"}
+        left={"-120px"}
+        w={"320px"}
+        h={"320px"}
+        borderRadius={"50%"}
+        pointerEvents={"none"}
+        bg={"radial-gradient(circle, rgba(0, 96, 199, 0.2), transparent 70%)"}
+      />
       <InnerContentWrapper
         display={"flex"}
         direction={"column"}
         justify={"center"}
         align={"center"}
         maxW={"unset"}
+        position={"relative"}
+        zIndex={1}
+        py={{ base: "70px", md: "80px" }}
       >
         <Flex
-          justifyContent={"center"}
-          h="fit-content"
-          gap={"10px"}
-          alignItems={"center"}
-          mb="64px"
+          direction={"column"}
+          align={"center"}
+          mb={{ base: "40px", md: "54px" }}
         >
-          <Text size="header-2">Technical Arsenals</Text>
-          {/* <FaLaptopCode style={{ fontSize: "2.5rem" }} /> */}
+          <Text
+            fontSize={"12px"}
+            textTransform={"uppercase"}
+            letterSpacing={"0.12em"}
+            color={"rgba(255, 255, 255, 0.62)"}
+            mb={"10px"}
+          >
+            Core Tech Stack
+          </Text>
+          <Text size="header-2" textAlign={"center"} mb={"12px"}>
+            Technical Arsenals
+          </Text>
+          <Text
+            textAlign={"center"}
+            maxW={"760px"}
+            color={"rgba(255, 255, 255, 0.72)"}
+          >
+            Technologies I use to build reliable, scalable, and user-focused web
+            experiences.
+          </Text>
         </Flex>
-        <div
-          ref={sliderRef}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            width: "full",
-          }}
-          dir="row"
-          className="keen-slider"
-        >
-          <SiJavascript
-            className="keen-slider__slide"
-            style={{ color: "#EED81C", fontSize: "5rem" }}
+
+        <Flex w="full" position={"relative"}>
+          <Box
+            position={"absolute"}
+            left={0}
+            top={0}
+            bottom={0}
+            w={"110px"}
+            bg={"linear-gradient(90deg, rgba(18, 16, 16, 0.9), transparent)"}
+            zIndex={2}
+            pointerEvents={"none"}
           />
-          <FaHtml5
-            className="keen-slider__slide"
-            style={{ color: "#DF4716", fontSize: "5rem" }}
-          />
-          <FaCss3
-            className="keen-slider__slide"
-            style={{ color: "#2194F0", fontSize: "5rem" }}
-          />
-          <FaSass
-            className="keen-slider__slide"
-            style={{ color: "#C96195", fontSize: "5rem" }}
+          <Box
+            position={"absolute"}
+            right={0}
+            top={0}
+            bottom={0}
+            w={"110px"}
+            bg={"linear-gradient(270deg, rgba(18, 16, 16, 0.9), transparent)"}
+            zIndex={2}
+            pointerEvents={"none"}
           />
 
-          <FaReact
-            className="keen-slider__slide"
-            style={{ color: "#50BBD7", fontSize: "5rem" }}
-          />
-
-          <SiRedux
-            className="keen-slider__slide"
-            style={{ color: "#7348B7", fontSize: "5rem" }}
-          />
-
-          <DiMongodb
-            className="keen-slider__slide"
-            style={{ color: "#87D144", fontSize: "5rem" }}
-          />
-
-          <FaNodeJs
-            className="keen-slider__slide"
-            style={{ color: "#88C249", fontSize: "8rem" }}
-          />
-
-          <FaGit
-            className="keen-slider__slide"
-            style={{ color: "#E94F30", fontSize: "8rem" }}
-          />
-
-          <FaGithub
-            className="keen-slider__slide"
-            style={{ color: "white", fontSize: "8rem" }}
-          />
-
-          <SiJsonwebtokens
-            className="keen-slider__slide"
-            style={{ color: "#CE38F6", fontSize: "8rem" }}
-          />
-
-          <SiSocketdotio
-            className="keen-slider__slide"
-            style={{ color: "white", fontSize: "8rem" }}
-          />
-          <RiNextjsFill className="keen-slider__slide" />
-          <SiTypescript
-            className="keen-slider__slide"
-            style={{ color: "rgb(47,116,192)" }}
-          />
-          <SiApollographql
-            className="keen-slider__slide"
-            style={{ color: "rgb(69,39,188)" }}
-          />
-          <RiTailwindCssFill
-            className="keen-slider__slide"
-            style={{ color: "rgb(56,189,248)" }}
-          />
-          <SiChakraui
-            className="keen-slider__slide"
-            style={{ color: "rgb(93,201,202)" }}
-          />
-          <SiReactquery
-            className="keen-slider__slide"
-            style={{ color: "rgb(255,71,89)" }}
-          />
-          <SiLighthouse
-            className="keen-slider__slide"
-            style={{ color: "rgb(255,107,57)" }}
-          />
-          <SiStrapi
-            className="keen-slider__slide"
-            style={{
-              color: "rgb(79,75,255)",
-              borderRadius: "35px",
-            }}
-          />
-        </div>
+          <Box
+            ref={sliderRef}
+            className="keen-slider"
+            w="full"
+            style={{ display: "flex", alignItems: "center" }}
+          >
+            {skillItems.map((skill) => (
+              <Flex
+                key={skill.name}
+                className="keen-slider__slide"
+                align={"center"}
+                justify={"center"}
+                py={"8px"}
+              >
+                <Flex
+                  role="group"
+                  align={"center"}
+                  justify={"center"}
+                  w={{ base: "70px", md: "76px" }}
+                  h={{ base: "70px", md: "76px" }}
+                  borderRadius={"18px"}
+                  border={"1px solid rgba(255, 255, 255, 0.14)"}
+                  bg={
+                    "linear-gradient(180deg, rgba(28, 40, 52, 0.9), rgba(15, 22, 30, 0.95))"
+                  }
+                  boxShadow={"0px 14px 26px rgba(0, 0, 0, 0.25)"}
+                  transition={"transform 180ms ease, border-color 180ms ease"}
+                  _hover={{
+                    transform: "translateY(-4px)",
+                    borderColor: "rgba(0, 96, 199, 0.52)",
+                  }}
+                >
+                  <Box
+                    as={skill.icon}
+                    color={skill.color}
+                    fontSize={{ base: "34px", md: "38px" }}
+                    transition={"filter 180ms ease"}
+                    _groupHover={{ filter: "brightness(1.2)" }}
+                  />
+                </Flex>
+              </Flex>
+            ))}
+          </Box>
+        </Flex>
       </InnerContentWrapper>
     </OuterContentWrapper>
   );

@@ -43,36 +43,36 @@ type CardProps = {
 
 const items: CardProps[] = [
   {
-    desc: "FB Clone - First ReactJS project, replicating home page ui and comment feature of Facebook using ReactJS, Sass, HTML, and CSS.",
-    name: "FB Clone",
-    linkSrc: "https://jade-kenneth.github.io/",
-    logoSrc: "/exp-logo-3.png",
-    thumbnail: "/exp-thumbnail-3.png",
-    techStack: ["ReactJS", "Sass", "HTML", "CSS"],
-  },
-  {
     desc: "Share your thoughts and discuss with diverse communities and interests!",
     name: "Blog V1",
     linkSrc: "https://blogdevsitever1.netlify.app/",
     logoSrc: "/exp-logo-4.png",
     thumbnail: "/exp-thumbnail-4.png",
-    techStack: ["ReactJS", "Sass", "HTML", "CSS", "ExpressJS", "MongoDB"],
+    techStack: ["ReactJS", "Sass", "RestAPI", "CSS", "ExpressJS", "MongoDB"],
   },
   {
     desc: "Amy Store is an eCommerce site offering a seamless shopping experience with a diverse product range.",
-    name: "Amy Store",
+    name: "Amy Store V1",
     linkSrc: "https://amystore.netlify.app/",
     logoSrc: "/exp-logo-5.png",
     thumbnail: "/exp-thumbnail-5.png",
     techStack: [
       "ReactJS",
       "Sass",
-      "HTML",
+      "RestAPI",
       "CSS",
       "ExpressJS",
       "MongoDB",
       "Socket.IO",
     ],
+  },
+  {
+    desc: "FB Clone - First ReactJS project, replicating home page ui and comment feature of Facebook using ReactJS, Sass, HTML, and CSS.",
+    name: "FB Clone",
+    linkSrc: "https://jade-kenneth.github.io/",
+    logoSrc: "/exp-logo-3.png",
+    thumbnail: "/exp-thumbnail-3.png",
+    techStack: ["ReactJS", "Sass", "HTML", "CSS"],
   },
   {
     desc: "This portfolio highlights my early work as a Frontend Developer, focusing on clean UI design.",
@@ -90,6 +90,15 @@ const items: CardProps[] = [
     thumbnail: "/exp-thumbnail-6.png",
     techStack: ["NextJS", "ChakraUI", "RestAPI"],
   },
+
+  {
+    desc: "DevLuvs makes developer-focused content creation effortless. Just paste, publish, and let your code shine",
+    name: "Devluvs",
+    linkSrc: "https://studio-devluvs-highoutput.vercel.app/",
+    logoSrc: "/exp-logo-2.png",
+    thumbnail: "/exp-thumbnail-2.png",
+    techStack: ["NextJS", "ChakraUI", "GraphQL", "TailwindCSS"],
+  },
   {
     desc: "Expert coaching boosts remote teams by driving growth, increasing productivity, and enhancing team morale.",
     name: "Advante",
@@ -99,15 +108,7 @@ const items: CardProps[] = [
     techStack: ["NextJS", "TailwindCSS", "GraphQL", "ChakraUI", "Strapi"],
   },
   {
-    desc: "DevLuvs makes developer-focused content creation effortless. Just paste, publish, and let your code shine",
-    name: "Devluvs",
-    linkSrc: "https://studio-devluvs-highoutput.vercel.app/",
-    logoSrc: "/exp-logo-2.png",
-    thumbnail: "/exp-thumbnail-2.png",
-    techStack: ["NextJS", "ChakraUI", "GraphQL"],
-  },
-  {
-    desc: "Amy Store V2 is a next-generation, AI-powered eCommerce platform designed to optimize performance, refine feature architecture, and elevate user experience and visual design. With intelligent recommendations, smart search capabilities, and personalized shopping experiences, it delivers a seamless and scalable solution across web and Android devices, with iOS support launching soon.",
+    desc: "Amy Store V2 is a next-generation eCommerce platform built with enhanced feature implementation, optimized performance — available on web and Android, with iOS coming soon.",
     name: "Amy Store V2",
     linkSrc: "https://amy-store.vercel.app/",
     logoSrc: "/exp-logo-8.png",
