@@ -19,6 +19,7 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import {
   SiApachekafka,
+  SiBrevo,
   SiCapacitor,
   SiChakraui,
   SiExpress,
@@ -27,6 +28,7 @@ import {
   SiNestjs,
   SiSocketdotio,
   SiStrapi,
+  SiXendit,
 } from "react-icons/si";
 import CustomNextImage from "../CustomNextImage/CustomNextImage";
 import InnerContentWrapper from "../InnerContentWrapper/InnerContentWrapper";
@@ -123,6 +125,8 @@ const items: CardProps[] = [
       "NestJS",
       "Kafka",
       "Capacitor",
+      "Xendit",
+      "Brevo",
     ],
     inprogress: true,
   },
@@ -235,6 +239,18 @@ const techStyleMap: Record<string, TechStyle> = {
     textColor: "#119EFF",
     chipBg: "rgba(17, 158, 255, 0.14)",
     chipBorder: "rgba(17, 158, 255, 0.36)",
+  },
+  Xendit: {
+    icon: SiXendit,
+    textColor: "#4573FF",
+    chipBg: "rgba(69, 115, 255, 0.14)",
+    chipBorder: "rgba(69, 115, 255, 0.38)",
+  },
+  Brevo: {
+    icon: SiBrevo,
+    textColor: "#0B996E",
+    chipBg: "rgba(11, 153, 110, 0.14)",
+    chipBorder: "rgba(11, 153, 110, 0.38)",
   },
 };
 
