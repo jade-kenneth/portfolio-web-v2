@@ -39,20 +39,21 @@ type CardProps = {
   thumbnail: string;
   linkSrc: string;
   techStack: string[];
+  inprogress?: boolean;
 };
 
 const items: CardProps[] = [
   {
-    desc: "Share your thoughts and discuss with diverse communities and interests!",
-    name: "Blog V1",
+    desc: "My first fullstack application, built as a personal learning project. While studying web development, I documented my learnings and transformed them into a functional blog platform. This project reflects my early exploration of both frontend and backend development, turning practice and notes into a working application.",
+    name: "Blog v1 ",
     linkSrc: "https://blogdevsitever1.netlify.app/",
     logoSrc: "/exp-logo-4.png",
     thumbnail: "/exp-thumbnail-4.png",
     techStack: ["ReactJS", "Sass", "RestAPI", "CSS", "ExpressJS", "MongoDB"],
   },
   {
-    desc: "Amy Store is an eCommerce site offering a seamless shopping experience with a diverse product range.",
-    name: "Amy Store V1",
+    desc: "My second fullstack application, featuring Socket.IO integration for real-time chat functionality. This project strengthened my experience in building interactive eCommerce features while implementing real-time communication between users and the system.",
+    name: "Amy Store V1 ",
     linkSrc: "https://amystore.netlify.app/",
     logoSrc: "/exp-logo-5.png",
     thumbnail: "/exp-thumbnail-5.png",
@@ -67,15 +68,15 @@ const items: CardProps[] = [
     ],
   },
   {
-    desc: "FB Clone - First ReactJS project, replicating home page ui and comment feature of Facebook using ReactJS, Sass, HTML, and CSS.",
-    name: "FB Clone",
+    desc: "Replicated Facebook’s homepage UI and comment functionality using ReactJS, Sass, and CSS — my first hands-on project using the React framework.",
+    name: "Facebook Clone",
     linkSrc: "https://jade-kenneth.github.io/",
     logoSrc: "/exp-logo-3.png",
     thumbnail: "/exp-thumbnail-3.png",
     techStack: ["ReactJS", "Sass", "HTML", "CSS"],
   },
   {
-    desc: "This portfolio highlights my early work as a Frontend Developer, focusing on clean UI design.",
+    desc: "This portfolio showcases my early work as a Frontend Developer, highlighting my focus on clean UI design and user-friendly interfaces, including concepts and layouts based on my own design ideas.",
     name: "Portfolio V1",
     linkSrc: "https://darundaywebdev.netlify.app/",
     logoSrc: "/exp-logo-7.png",
@@ -83,7 +84,7 @@ const items: CardProps[] = [
     techStack: ["ReactJS", "Sass", "HTML", "CSS"],
   },
   {
-    desc: "Internship project at Highoutput Ventures - A Pokedex app with special features battling with other pokemon.",
+    desc: "Developed a Pokédex web application featuring enhanced functionalities, including Pokémon battle simulations. Integrated and consumed REST APIs to fetch and manage dynamic data  and smooth user interaction.",
     name: "Pokedex",
     linkSrc: "https://pokedex-intern-project.vercel.app/",
     logoSrc: "/exp-logo-6.png",
@@ -92,7 +93,7 @@ const items: CardProps[] = [
   },
 
   {
-    desc: "DevLuvs makes developer-focused content creation effortless. Just paste, publish, and let your code shine",
+    desc: "One of the frontend developed UI for Devluvs, transforming UI designs into responsive, mobile-ready web applications with a strong focus on clean implementation and user experience.",
     name: "Devluvs",
     linkSrc: "https://studio-devluvs-highoutput.vercel.app/",
     logoSrc: "/exp-logo-2.png",
@@ -100,7 +101,7 @@ const items: CardProps[] = [
     techStack: ["NextJS", "ChakraUI", "GraphQL", "TailwindCSS"],
   },
   {
-    desc: "Expert coaching boosts remote teams by driving growth, increasing productivity, and enhancing team morale.",
+    desc: "Led the frontend development for Advante, transforming UI designs into responsive, mobile-ready web applications with a strong focus on clean implementation and user experience.",
     name: "Advante",
     linkSrc: "https://studio-advante-git-request-fix-highoutput.vercel.app/",
     logoSrc: "/exp-logo-1.png",
@@ -123,6 +124,7 @@ const items: CardProps[] = [
       "Kafka",
       "Capacitor",
     ],
+    inprogress: true,
   },
 ];
 
@@ -407,7 +409,7 @@ export default ExperienceAndCertificate;
 
 type EnhancedCardProps = CardProps & {
   order: number;
-  featured?: boolean;
+  inprogress?: boolean;
 };
 
 const Card: FC<EnhancedCardProps> = ({
@@ -418,7 +420,7 @@ const Card: FC<EnhancedCardProps> = ({
   thumbnail,
   techStack,
   order,
-  featured = false,
+  inprogress = false,
 }) => {
   return (
     <Flex
@@ -473,20 +475,26 @@ const Card: FC<EnhancedCardProps> = ({
             </Text>
           </Flex>
         </Flex>
-        {featured && (
-          <Badge
-            borderRadius={"full"}
-            px={"10px"}
-            py={"4px"}
-            bg={"rgba(0, 96, 199, 0.2)"}
-            color={"rgba(180, 218, 255, 1)"}
-            border={"1px solid rgba(0, 96, 199, 0.45)"}
-            fontSize={"10px"}
-            letterSpacing={"0.08em"}
-          >
-            FEATURED
-          </Badge>
-        )}
+        <Flex height={"full"}>
+          {inprogress && (
+            <Badge
+              borderRadius={"full"}
+              px={"10px"}
+              h="fit-content"
+              py={"4px"}
+              bg={"rgba(0, 96, 199, 0.2)"}
+              color={"rgba(180, 218, 255, 1)"}
+              border={"1px solid rgba(0, 96, 199, 0.45)"}
+              boxShadow={
+                "0px 0px 0px 1px rgba(120, 201, 255, 0.36), 0px 0px 18px rgba(0, 122, 255, 0.52)"
+              }
+              fontSize={"10px"}
+              letterSpacing={"0.08em"}
+            >
+              In progress
+            </Badge>
+          )}
+        </Flex>
       </Flex>
 
       <Text

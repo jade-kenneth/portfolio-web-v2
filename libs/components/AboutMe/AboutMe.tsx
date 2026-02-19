@@ -46,7 +46,7 @@ const AboutMe = () => {
     <OuterContentWrapper
       id="aboutme"
       background={colors.background.secondary}
-      h={"974px"}
+      h={"1074px"}
     >
       <InnerContentWrapper>
         <Flex flex={1} h="inherit" w="full" align={"center"}>
@@ -111,22 +111,23 @@ const AboutMe = () => {
               color={"rgba(255, 255, 255, 0.86)"}
             >
               I’m a web developer with more than{" "}
-              {new Date().getFullYear() - 2022} years of experience. I graduated
-              from Visayas State University with a degree in Bachelor of Science
-              in Computer Science and have spent the past few years honing my
-              skills and working on diverse web development projects. I’m
-              excited to bring my experience and passion to new opportunities.
+              {new Date().getFullYear() - 2021}+ years of experience. I
+              graduated from Visayas State University with a degree in Bachelor
+              of Science in Computer Science and have spent the past few years
+              honing my skills and working on diverse web development projects.
+              I’m excited to bring my experience and passion to new
+              opportunities.
             </Text>
 
             <Flex gap={"10px"} wrap={"wrap"}>
-              <Button
+              {/* <Button
                 size="xl"
                 fontWeight={700}
                 fontSize={"16px"}
                 variant="solid"
               >
                 Download Resume
-              </Button>
+              </Button> */}
               <Link href="#contactme">
                 <Button
                   variant={"unstyled"}
@@ -157,7 +158,7 @@ const AboutMe = () => {
           gap="20px"
           direction={"column"}
         >
-          {Array.from({ length: 60 }).map((_, idx) => (
+          {Array.from({ length: 66 }).map((_, idx) => (
             <Flex
               key={idx}
               as={motion.div}
@@ -172,7 +173,7 @@ const AboutMe = () => {
                 width={"8px"}
                 height="13px"
               />
-              {idx === 4 && (
+              {idx === 2 && (
                 <Card
                   accentColor="rgba(0, 96, 199, 1)"
                   icon={MdGroups}
@@ -181,7 +182,7 @@ const AboutMe = () => {
                   year="2015 - 2020"
                 />
               )}
-              {idx === 12 && (
+              {idx === 10 && (
                 <Card
                   accentColor="rgba(90, 189, 148, 1)"
                   icon={MdWorkOutline}
@@ -190,7 +191,7 @@ const AboutMe = () => {
                   year="2017 - 2020"
                 />
               )}
-              {idx === 20 && (
+              {idx === 18 && (
                 <Card
                   accentColor="rgba(239, 167, 71, 1)"
                   icon={MdCode}
@@ -199,7 +200,7 @@ const AboutMe = () => {
                   year="2019 - 2020"
                 />
               )}
-              {idx === 33 && (
+              {idx === 26 && (
                 <Card
                   accentColor="rgba(147, 124, 255, 1)"
                   icon={MdSchool}
@@ -208,7 +209,7 @@ const AboutMe = () => {
                   year="2015 - 2020"
                 />
               )}
-              {idx === 40 && (
+              {idx === 34 && (
                 <Card
                   accentColor="rgba(97, 217, 208, 1)"
                   icon={MdAutoStories}
@@ -217,22 +218,40 @@ const AboutMe = () => {
                   year="2021 - Present"
                 />
               )}
-              {idx === 47 && (
+              {idx === 41 && (
                 <Card
                   accentColor="rgba(255, 130, 130, 1)"
                   icon={MdRocketLaunch}
-                  desc="Web developer"
+                  desc="Fullstack Web developer"
                   title="Freelancer"
                   year="2021 - 2022"
                 />
               )}
-              {idx === 53 && (
+              {idx === 47 && (
                 <Card
                   accentColor="rgba(78, 174, 255, 1)"
                   icon={MdOutlineCode}
-                  desc="Working as a front-end developer at ScaleForge."
+                  desc="Works at High Output Venture"
                   title="Frontend Developer"
-                  year="2022 - Present"
+                  year="2022 - 2023"
+                />
+              )}
+              {idx === 54 && (
+                <Card
+                  accentColor="rgba(78, 174, 255, 1)"
+                  icon={MdOutlineCode}
+                  desc="Works at Scaleforge"
+                  title="Frontend Developer"
+                  year="2023 - Present"
+                />
+              )}
+              {idx === 60 && (
+                <Card
+                  accentColor="rgba(255, 130, 130, 1)"
+                  icon={MdRocketLaunch}
+                  desc="Fullstack Web developer"
+                  title="Freelancer"
+                  year="2026 - Present"
                 />
               )}
             </Flex>
@@ -304,6 +323,7 @@ const Card: FC<CardProps> = ({
       w="321px"
       alignItems={"center"}
       zIndex={1}
+      pr="20px"
     >
       <Flex
         position={"relative"}

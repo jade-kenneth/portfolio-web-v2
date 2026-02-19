@@ -19,6 +19,7 @@ import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import {
   SiApollographql,
   SiChakraui,
+  SiFramer,
   SiJavascript,
   SiJsonwebtokens,
   SiLighthouse,
@@ -58,6 +59,7 @@ const skillItems: SkillItem[] = [
   { name: "React Query", icon: SiReactquery, color: "rgb(255,71,89)" },
   { name: "Lighthouse", icon: SiLighthouse, color: "rgb(255,107,57)" },
   { name: "Strapi", icon: SiStrapi, color: "rgb(79,75,255)" },
+  { name: "Framer Motion", icon: SiFramer, color: "rgb(79,75,255)" },
 ];
 
 const Skillsets = () => {
