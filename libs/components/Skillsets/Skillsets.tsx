@@ -18,16 +18,20 @@ import {
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import {
   SiApollographql,
+  SiBrevo,
   SiChakraui,
   SiFramer,
   SiJavascript,
   SiJsonwebtokens,
   SiLighthouse,
+  SiReacthookform,
   SiReactquery,
   SiRedux,
   SiSocketdotio,
   SiStrapi,
   SiTypescript,
+  SiXendit,
+  SiZod,
 } from "react-icons/si";
 import InnerContentWrapper from "../InnerContentWrapper/InnerContentWrapper";
 import OuterContentWrapper from "../OuterContentWrapper/OuterContentWrapper";
@@ -36,6 +40,9 @@ type SkillItem = {
   name: string;
   icon: IconType;
   color: string;
+  tileBg?: string;
+  tileBorder?: string;
+  tileHoverBorder?: string;
 };
 
 const skillItems: SkillItem[] = [
@@ -60,6 +67,24 @@ const skillItems: SkillItem[] = [
   { name: "Lighthouse", icon: SiLighthouse, color: "rgb(255,107,57)" },
   { name: "Strapi", icon: SiStrapi, color: "rgb(79,75,255)" },
   { name: "Framer Motion", icon: SiFramer, color: "rgb(79,75,255)" },
+  {
+    name: "Xendit",
+    icon: SiXendit,
+    color: "#4573FF",
+    tileBg: "rgba(69, 115, 255, 0.16)",
+    tileBorder: "1px solid rgba(69, 115, 255, 0.34)",
+    tileHoverBorder: "rgba(69, 115, 255, 0.62)",
+  },
+  {
+    name: "Brevo",
+    icon: SiBrevo,
+    color: "#0B996E",
+    tileBg: "rgba(11, 153, 110, 0.16)",
+    tileBorder: "1px solid rgba(11, 153, 110, 0.34)",
+    tileHoverBorder: "rgba(11, 153, 110, 0.62)",
+  },
+  { name: "React Hook Form", icon: SiReacthookform, color: "rgb(79,75,255)" },
+  { name: "Zod", icon: SiZod, color: "rgb(79,75,255)" },
 ];
 
 const Skillsets = () => {
@@ -188,15 +213,16 @@ const Skillsets = () => {
                   w={{ base: "70px", md: "76px" }}
                   h={{ base: "70px", md: "76px" }}
                   borderRadius={"18px"}
-                  border={"1px solid rgba(255, 255, 255, 0.14)"}
+                  border={skill.tileBorder ?? "1px solid rgba(255, 255, 255, 0.14)"}
                   bg={
+                    skill.tileBg ??
                     "linear-gradient(180deg, rgba(28, 40, 52, 0.9), rgba(15, 22, 30, 0.95))"
                   }
                   boxShadow={"0px 14px 26px rgba(0, 0, 0, 0.25)"}
                   transition={"transform 180ms ease, border-color 180ms ease"}
                   _hover={{
                     transform: "translateY(-4px)",
-                    borderColor: "rgba(0, 96, 199, 0.52)",
+                    borderColor: skill.tileHoverBorder ?? "rgba(0, 96, 199, 0.52)",
                   }}
                 >
                   <Box
