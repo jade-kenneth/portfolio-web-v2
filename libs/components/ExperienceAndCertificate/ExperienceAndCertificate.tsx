@@ -123,6 +123,7 @@ const items: CardProps[] = [
       "ArkUI",
       "TailwindCSS",
       "GraphQL",
+      "RestAPI",
       "MongoDB",
       "NestJS",
       "Kafka",
