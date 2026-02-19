@@ -26,9 +26,11 @@ import {
   SiGraphql,
   SiMongodb,
   SiNestjs,
+  SiReacthookform,
   SiSocketdotio,
   SiStrapi,
   SiXendit,
+  SiZod,
 } from "react-icons/si";
 import CustomNextImage from "../CustomNextImage/CustomNextImage";
 import InnerContentWrapper from "../InnerContentWrapper/InnerContentWrapper";
@@ -127,6 +129,9 @@ const items: CardProps[] = [
       "Capacitor",
       "Xendit",
       "Brevo",
+      "React Hook Form",
+      "Zod",
+      "Zustand",
     ],
     inprogress: true,
   },
@@ -251,6 +256,18 @@ const techStyleMap: Record<string, TechStyle> = {
     textColor: "#0B996E",
     chipBg: "rgba(11, 153, 110, 0.14)",
     chipBorder: "rgba(11, 153, 110, 0.38)",
+  },
+  "React Hook Form": {
+    icon: SiReacthookform,
+    textColor: "#EC5990",
+    chipBg: "rgba(236, 89, 144, 0.14)",
+    chipBorder: "rgba(236, 89, 144, 0.38)",
+  },
+  Zod: {
+    icon: SiZod,
+    textColor: "#3E67B1",
+    chipBg: "rgba(62, 103, 177, 0.14)",
+    chipBorder: "rgba(62, 103, 177, 0.38)",
   },
 };
 

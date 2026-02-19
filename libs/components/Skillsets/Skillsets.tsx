@@ -213,7 +213,9 @@ const Skillsets = () => {
                   w={{ base: "70px", md: "76px" }}
                   h={{ base: "70px", md: "76px" }}
                   borderRadius={"18px"}
-                  border={skill.tileBorder ?? "1px solid rgba(255, 255, 255, 0.14)"}
+                  border={
+                    skill.tileBorder ?? "1px solid rgba(255, 255, 255, 0.14)"
+                  }
                   bg={
                     skill.tileBg ??
                     "linear-gradient(180deg, rgba(28, 40, 52, 0.9), rgba(15, 22, 30, 0.95))"
@@ -222,7 +224,8 @@ const Skillsets = () => {
                   transition={"transform 180ms ease, border-color 180ms ease"}
                   _hover={{
                     transform: "translateY(-4px)",
-                    borderColor: skill.tileHoverBorder ?? "rgba(0, 96, 199, 0.52)",
+                    borderColor:
+                      skill.tileHoverBorder ?? "rgba(0, 96, 199, 0.52)",
                   }}
                 >
                   <Box
