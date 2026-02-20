@@ -81,6 +81,7 @@ const ContactUs = () => {
       bg={colors.background.secondary}
       id="contactme"
       pb={{ base: "72px", md: "99.5px" }}
+      pt={{ base: "60px", md: "80px" }}
       position={"relative"}
       overflow={"hidden"}
     >

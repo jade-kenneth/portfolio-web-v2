@@ -1,3 +1,5 @@
+"use client";
+
 import { colors } from "@/libs/theme/colors";
 import {
   Badge,
@@ -299,7 +301,7 @@ const ExperienceAndCertificate = () => {
         bg={"radial-gradient(circle, rgba(0, 96, 199, 0.24), transparent 65%)"}
         pointerEvents={"none"}
       />
-      <Box
+      {/* <Box
         position={"absolute"}
         bottom={"-180px"}
         left={"-140px"}
@@ -308,7 +310,7 @@ const ExperienceAndCertificate = () => {
         borderRadius={"50%"}
         bg={"radial-gradient(circle, rgba(0, 96, 199, 0.16), transparent 70%)"}
         pointerEvents={"none"}
-      />
+      /> */}
       <InnerContentWrapper
         align={"center"}
         justify={"center"}
