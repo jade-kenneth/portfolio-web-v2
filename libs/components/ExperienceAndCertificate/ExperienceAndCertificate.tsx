@@ -28,9 +28,11 @@ import {
   SiChakraui,
   SiExpress,
   SiFramer,
+  SiGoogleanalytics,
   SiGraphql,
   SiMongodb,
   SiNestjs,
+  SiPostman,
   SiReacthookform,
   SiReactquery,
   SiSocketdotio,
@@ -65,7 +67,7 @@ const items: CardProps[] = [
     linkSrc: "https://blogdevsitever1.netlify.app/",
     logoSrc: "/exp-logo-4.png",
     thumbnail: "/exp-thumbnail-4.png",
-    techStack: ["ReactJS", "Sass", "RestAPI", "CSS", "ExpressJS", "MongoDB"],
+    techStack: ["ReactJS", "Sass", "Rest API", "CSS", "ExpressJS", "MongoDB"],
     category: "personal",
   },
   {
@@ -77,7 +79,7 @@ const items: CardProps[] = [
     techStack: [
       "ReactJS",
       "Sass",
-      "RestAPI",
+      "Rest API",
       "CSS",
       "ExpressJS",
       "MongoDB",
@@ -109,7 +111,7 @@ const items: CardProps[] = [
     linkSrc: "https://pokedex-intern-project.vercel.app/",
     logoSrc: "/exp-logo-6.png",
     thumbnail: "/exp-thumbnail-6.png",
-    techStack: ["NextJS", "ChakraUI", "RestAPI"],
+    techStack: ["NextJS", "ChakraUI", "Rest API"],
     category: "personal",
   },
 
@@ -215,7 +217,7 @@ const items: CardProps[] = [
       "ArkUI",
       "TailwindCSS",
       "GraphQL",
-      "RestAPI",
+      "Rest API",
       "MongoDB",
       "NestJS",
       "Kafka",
@@ -226,6 +228,7 @@ const items: CardProps[] = [
       "Zod",
       "Zustand",
       "Apollo GraphQL",
+      "Google Analytics",
     ],
     category: "personal",
     inprogress: true,
@@ -329,10 +332,11 @@ const techStyleMap: Record<string, TechStyle> = {
     chipBg: "rgba(242, 242, 242, 0.12)",
     chipBorder: "rgba(242, 242, 242, 0.3)",
   },
-  RestAPI: {
-    textColor: "#FFD36A",
-    chipBg: "rgba(255, 211, 106, 0.14)",
-    chipBorder: "rgba(255, 211, 106, 0.36)",
+  "Rest API": {
+    icon: SiPostman,
+    textColor: "#FF6C37",
+    chipBg: "rgba(255, 108, 55, 0.14)",
+    chipBorder: "rgba(255, 108, 55, 0.38)",
   },
   Capacitor: {
     icon: SiCapacitor,
@@ -393,6 +397,12 @@ const techStyleMap: Record<string, TechStyle> = {
     textColor: "#FF4785",
     chipBg: "rgba(255, 71, 133, 0.14)",
     chipBorder: "rgba(255, 71, 133, 0.38)",
+  },
+  "Google Analytics": {
+    icon: SiGoogleanalytics,
+    textColor: "#E37400",
+    chipBg: "rgba(227, 116, 0, 0.14)",
+    chipBorder: "rgba(227, 116, 0, 0.38)",
   },
 };
 
