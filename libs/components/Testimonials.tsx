@@ -16,7 +16,8 @@ type TestimonialProps = {
   name: string;
   job: string;
   testimony: string;
-  linkedinUrl: string;
+  linkedinUrl?: string;
+  portfolioUrl?: string;
 };
 
 type TestimonialCardProps = TestimonialProps & {
@@ -36,26 +37,27 @@ const testimonialItems: TestimonialProps[] = [
   {
     imageSrc: "/kent.png",
     name: "Kent Bryan Maglinao",
-    job: "Backend Engineer",
+    job: "Senior Backend Engineer",
     linkedinUrl: "https://www.linkedin.com/in/kent-bryan-maglinao/",
     testimony:
       "In a fast-paced development environment, reliability is everything, and Jade Kenneth is the one of the most dependable developer I’ve worked with. His dependability made our entire project run smoother.",
   },
   {
-    imageSrc: "/jd.jpeg",
-    name: "Jane Dhell Cagas",
-    job: "UI/UX Designer",
-    linkedinUrl: "https://www.linkedin.com/in/jadeyc/",
+    imageSrc: "/pewee.png",
+    name: "Carmella Ventanilla",
+    job: "Senior Software Quality Assurance Engineer",
+    portfolioUrl:
+      "https://peweeventanilla.github.io/Carmella-Ventanilla-Portfolio/",
     testimony:
-      "I worked with Jade Kenneth, and I can confidently vouch for him as a developer. He is friendly, approachable, and easy to work with. As a UI/UX Designer, I appreciated how he not only followed the design but also suggested ideas that improved the overall user experience. He works on websites, backend systems, and mobile apps, making him flexible and reliable across different parts of a project. He takes initiative and consistently delivers quality work. Any team would be lucky to have him.",
+      "I worked closely with him as a Software Quality Engineer, and he is a reliable and collaborative Frontend Developer. He takes reported issues seriously, fixes them quickly, and communicates clearly throughout the process. We constantly coordinate to monitor bugs, validate fixes, and ensure everything is stable before release. He is proactive, responsible, and committed to delivering quality work.",
   },
   {
-    imageSrc: "/jd.jpeg",
-    name: "Jane Dhell Cagas",
-    job: "UI/UX Designer",
-    linkedinUrl: "https://www.linkedin.com/in/jadeyc/",
+    imageSrc: "/john.png",
+    name: "John Christopher Go",
+    job: "Senior Frontend Engineer",
+    linkedinUrl: "https://www.linkedin.com/in/jc-go/",
     testimony:
-      "I worked with Jade Kenneth Darunday, and I can confidently vouch for him as a developer. He is friendly, approachable, and easy to work with. As a UI/UX Designer, I appreciated how he not only followed the design but also suggested ideas that improved the overall user experience. He works on websites, backend systems, and mobile apps, making him flexible and reliable across different parts of a project. He takes initiative and consistently delivers quality work. Any team would be lucky to have him.",
+      "I worked with him as a fellow Frontend Developer, and he is a great teammate to collaborate with. He writes clean and maintainable code, communicates clearly, and is always open to feedback. When working on features or fixing bugs, he stays proactive and makes sure everything is implemented properly. He is reliable, easy to work with, and focused on delivering quality results as a team.",
   },
 ];
 
@@ -279,6 +281,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
   job,
   testimony,
   linkedinUrl,
+  portfolioUrl,
   onPause,
   onResume,
 }) => {
@@ -350,30 +353,25 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
               boxShadow={"0px 10px 24px rgba(0, 0, 0, 0.35)"}
             />
             <Flex direction={"column"}>
-              <Text size="label-md" fontSize={{ base: "17px", md: "19px" }}>
-                {name}
-              </Text>
+              <Flex align={"center"} gap={"8px"} mb={"4px"}>
+                <Text size="label-md" fontSize={{ base: "17px", md: "19px" }}>
+                  {name}
+                </Text>
+
+                <Flex gap={"6px"}>
+                  {Array.from({ length: 5 }).map((_, idx) => (
+                    <Box
+                      key={`${name}-star-${idx}`}
+                      as={FaStar}
+                      color={"#FFD36A"}
+                      fontSize={"14px"}
+                    />
+                  ))}
+                </Flex>
+              </Flex>
               <Text fontSize={"12px"} color={"rgba(255, 255, 255, 0.64)"}>
                 {job}
               </Text>
-            </Flex>
-            <Flex
-              gap={"8px"}
-              mt="11px"
-              align={"start"}
-              justify={"start"}
-              mb="auto"
-            >
-              <Flex gap={"6px"}>
-                {Array.from({ length: 5 }).map((_, idx) => (
-                  <Box
-                    key={`${name}-star-${idx}`}
-                    as={FaStar}
-                    color={"#FFD36A"}
-                    fontSize={"14px"}
-                  />
-                ))}
-              </Flex>
             </Flex>
           </Flex>
         </Flex>
@@ -388,7 +386,11 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
           {testimony}
         </Text>
 
-        <Link href={linkedinUrl} target="_blank" rel="noopener noreferrer">
+        <Link
+          href={linkedinUrl ?? portfolioUrl ?? ""}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Flex
             align={"center"}
             justify={"center"}
@@ -409,7 +411,19 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
             }}
             aria-label={`${name} LinkedIn`}
           >
-            <Box as={FaLinkedinIn} fontSize={"16px"} />
+            {linkedinUrl && <Box as={FaLinkedinIn} fontSize={"16px"} />}
+            {portfolioUrl && (
+              <Box
+                as="svg"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                w={"16px"}
+                h={"16px"}
+              >
+                <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM10.0001 16H8V10H10.0001V16ZM9.00005 9C8.44772 9 8.00005 8.55228 8.00005 8C8.00005 7.44772 8.44772 7 9.00005 7C9.55238 7 10.0001 7.44772 10.0001 8C10.0001 8.55228 9.55238 9 9.00005 9ZM16 16H14V13C14 12.4477 13.5523 12 13 12C12.4477 12 12 11.5523 12 11V10H14V11C14 11.5523 14.4477 12 15 12C15.5523 12 16 12.4477 16 13V16Z" />
+              </Box>
+            )}
           </Flex>
         </Link>
       </Flex>
