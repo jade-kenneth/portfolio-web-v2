@@ -31,7 +31,15 @@ const testimonialItems: TestimonialProps[] = [
     job: "UI/UX Designer",
     linkedinUrl: "https://www.linkedin.com/in/jadeyc/",
     testimony:
-      "I worked with Jade Kenneth Darunday at ScaleForge and High Output Ventures, and I can confidently vouch for him. He is friendly, reliable, and great to work with. He not only follows the design but also suggests ideas that improve the overall user experience. He works on web, backend, and mobile projects, takes initiative, and consistently delivers quality work.",
+      "I worked with Jade Kenneth Darunday, and I can confidently vouch for him as a developer. He is friendly, approachable, and easy to work with. As a UI/UX Designer, I appreciated how he not only followed the design but also suggested ideas that improved the overall user experience. He works on websites, backend systems, and mobile apps, making him flexible and reliable across different parts of a project. He takes initiative and consistently delivers quality work. Any team would be lucky to have him.",
+  },
+  {
+    imageSrc: "/kent.png",
+    name: "Kent Bryan Maglinao",
+    job: "Backend Engineer",
+    linkedinUrl: "https://www.linkedin.com/in/kent-bryan-maglinao/",
+    testimony:
+      "In a fast-paced development environment, reliability is everything, and Jade Kenneth is the one of the most dependable developer I’ve worked with. His dependability made our entire project run smoother.",
   },
   {
     imageSrc: "/jd.jpeg",
@@ -39,7 +47,7 @@ const testimonialItems: TestimonialProps[] = [
     job: "UI/UX Designer",
     linkedinUrl: "https://www.linkedin.com/in/jadeyc/",
     testimony:
-      "I worked with Jade Kenneth Darunday at ScaleForge and High Output Ventures, and I can confidently vouch for him. He is friendly, reliable, and great to work with. He not only follows the design but also suggests ideas that improve the overall user experience. He works on web, backend, and mobile projects, takes initiative, and consistently delivers quality work.",
+      "I worked with Jade Kenneth Darunday, and I can confidently vouch for him as a developer. He is friendly, approachable, and easy to work with. As a UI/UX Designer, I appreciated how he not only followed the design but also suggested ideas that improved the overall user experience. He works on websites, backend systems, and mobile apps, making him flexible and reliable across different parts of a project. He takes initiative and consistently delivers quality work. Any team would be lucky to have him.",
   },
   {
     imageSrc: "/jd.jpeg",
@@ -47,15 +55,7 @@ const testimonialItems: TestimonialProps[] = [
     job: "UI/UX Designer",
     linkedinUrl: "https://www.linkedin.com/in/jadeyc/",
     testimony:
-      "I worked with Jade Kenneth Darunday at ScaleForge and High Output Ventures, and I can confidently vouch for him. He is friendly, reliable, and great to work with. He not only follows the design but also suggests ideas that improve the overall user experience. He works on web, backend, and mobile projects, takes initiative, and consistently delivers quality work.",
-  },
-  {
-    imageSrc: "/jd.jpeg",
-    name: "Jane Dhell Cagas",
-    job: "UI/UX Designer",
-    linkedinUrl: "https://www.linkedin.com/in/jadeyc/",
-    testimony:
-      "I worked with Jade Kenneth Darunday at ScaleForge and High Output Ventures, and I can confidently vouch for him. He is friendly, reliable, and great to work with. He not only follows the design but also suggests ideas that improve the overall user experience. He works on web, backend, and mobile projects, takes initiative, and consistently delivers quality work.",
+      "I worked with Jade Kenneth Darunday, and I can confidently vouch for him as a developer. He is friendly, approachable, and easy to work with. As a UI/UX Designer, I appreciated how he not only followed the design but also suggested ideas that improved the overall user experience. He works on websites, backend systems, and mobile apps, making him flexible and reliable across different parts of a project. He takes initiative and consistently delivers quality work. Any team would be lucky to have him.",
   },
 ];
 
@@ -98,9 +98,7 @@ const Testimonials = () => {
         },
       },
     },
-    [
-      // add plugins here
-    ]
+    []
   );
 
   const pauseSlider = () => {
@@ -381,8 +379,8 @@ const TestimonialCard: FC<TestimonialCardProps> = ({
         </Flex>
 
         <Text
-          fontSize={"17px"}
-          mt="1.5"
+          fontSize={"16px"}
+          mt="2.5"
           color={"rgba(255, 255, 255, 0.82)"}
           lineHeight={"1.85"}
           fontWeight={"400"}

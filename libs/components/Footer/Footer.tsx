@@ -20,6 +20,7 @@ const navLinks: FooterLink[] = [
   { href: "#aboutme", label: "About" },
   { href: "#skills", label: "Skills" },
   { href: "#workexperience", label: "Work Experience" },
+  { href: "#testimonials", label: "Testimonials" },
 ];
 
 const socialLinks: SocialLink[] = [
