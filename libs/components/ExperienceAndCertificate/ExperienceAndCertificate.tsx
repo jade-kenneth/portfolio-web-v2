@@ -7,6 +7,7 @@ import {
   Button,
   Flex,
   SimpleGrid,
+  Tab,
   TabList,
   TabPanel,
   TabPanels,
@@ -21,16 +22,21 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import {
   SiApachekafka,
+  SiApollographql,
   SiBrevo,
   SiCapacitor,
   SiChakraui,
   SiExpress,
+  SiFramer,
   SiGraphql,
   SiMongodb,
   SiNestjs,
   SiReacthookform,
+  SiReactquery,
   SiSocketdotio,
+  SiStorybook,
   SiStrapi,
+  SiSvelte,
   SiXendit,
   SiZod,
 } from "react-icons/si";
@@ -38,13 +44,17 @@ import CustomNextImage from "../CustomNextImage/CustomNextImage";
 import InnerContentWrapper from "../InnerContentWrapper/InnerContentWrapper";
 import OuterContentWrapper from "../OuterContentWrapper/OuterContentWrapper";
 
+type ProjectCategory = "personal" | "work";
+
 type CardProps = {
   desc: string;
   name: string;
-  logoSrc: string;
+  logoSrc?: string;
   thumbnail: string;
   linkSrc: string;
   techStack: string[];
+  category: ProjectCategory;
+  isPrivate?: boolean;
   inprogress?: boolean;
 };
 
@@ -56,6 +66,7 @@ const items: CardProps[] = [
     logoSrc: "/exp-logo-4.png",
     thumbnail: "/exp-thumbnail-4.png",
     techStack: ["ReactJS", "Sass", "RestAPI", "CSS", "ExpressJS", "MongoDB"],
+    category: "personal",
   },
   {
     desc: "My second fullstack application, featuring Socket.IO integration for real-time chat functionality. This project strengthened my experience in building interactive eCommerce features while implementing real-time communication between users and the system.",
@@ -72,6 +83,7 @@ const items: CardProps[] = [
       "MongoDB",
       "Socket.IO",
     ],
+    category: "personal",
   },
   {
     desc: "Replicated Facebook’s homepage UI and comment functionality using ReactJS, Sass, and CSS — my first hands-on project using the React framework.",
@@ -80,6 +92,7 @@ const items: CardProps[] = [
     logoSrc: "/exp-logo-3.png",
     thumbnail: "/exp-thumbnail-3.png",
     techStack: ["ReactJS", "Sass", "HTML", "CSS"],
+    category: "personal",
   },
   {
     desc: "This portfolio showcases my early work as a Frontend Developer, highlighting my focus on clean UI design and user-friendly interfaces, including concepts and layouts based on my own design ideas.",
@@ -88,6 +101,7 @@ const items: CardProps[] = [
     logoSrc: "/exp-logo-7.png",
     thumbnail: "/exp-thumbnail-7.png",
     techStack: ["ReactJS", "Sass", "HTML", "CSS"],
+    category: "personal",
   },
   {
     desc: "Developed a Pokédex web application featuring enhanced functionalities, including Pokémon battle simulations. Integrated and consumed REST APIs to fetch and manage dynamic data  and smooth user interaction.",
@@ -96,6 +110,7 @@ const items: CardProps[] = [
     logoSrc: "/exp-logo-6.png",
     thumbnail: "/exp-thumbnail-6.png",
     techStack: ["NextJS", "ChakraUI", "RestAPI"],
+    category: "personal",
   },
 
   {
@@ -104,7 +119,14 @@ const items: CardProps[] = [
     linkSrc: "https://studio-devluvs-highoutput.vercel.app/",
     logoSrc: "/exp-logo-2.png",
     thumbnail: "/exp-thumbnail-2.png",
-    techStack: ["NextJS", "ChakraUI", "GraphQL", "TailwindCSS"],
+    techStack: [
+      "NextJS",
+      "ChakraUI",
+      "GraphQL",
+      "TailwindCSS",
+      "Apollo GraphQL",
+    ],
+    category: "work",
   },
   {
     desc: "Led the frontend development for Advante, transforming UI designs into responsive, mobile-ready web applications with a strong focus on clean implementation and user experience.",
@@ -112,7 +134,75 @@ const items: CardProps[] = [
     linkSrc: "https://studio-advante-git-request-fix-highoutput.vercel.app/",
     logoSrc: "/exp-logo-1.png",
     thumbnail: "/exp-thumbnail-1.png",
-    techStack: ["NextJS", "TailwindCSS", "GraphQL", "ChakraUI", "Strapi"],
+    techStack: [
+      "NextJS",
+      "TailwindCSS",
+      "GraphQL",
+      "ChakraUI",
+      "Strapi",
+      "Apollo GraphQL",
+    ],
+    category: "work",
+  },
+
+  {
+    desc: "HDS (Design System UI Library) is a branded UI component library built on Chakra UI. As a contributor, I developed scalable, reusable components and maintained them using Storybook for proper documentation, testing, and team collaboration.",
+    name: "HDS",
+    linkSrc: "",
+
+    thumbnail: "/hds.png",
+    techStack: [
+      "ChakraUI",
+      "ZagJS",
+      "Framer Motion",
+      "Storybook",
+      "FloatingUI",
+    ],
+    category: "work",
+    isPrivate: true,
+  },
+
+  {
+    desc: "Crazywin is an online casino platform offering a variety of games including slots, table games, and live dealer experiences. As a Frontend Engineer, I work on developing new features, improving user interface components, and ensuring seamless performance across web and mobile platforms. I also handle mobile optimization using Capacitor and focus on delivering fully responsive, mobile-ready designs to provide a smooth and engaging player experience.",
+    name: "Crazywin",
+    linkSrc: "https://crazywin.ph/",
+
+    thumbnail: "/cw.png",
+    techStack: [
+      "Svelte",
+      "TailwindCSS",
+      "GraphQL",
+      "Capacitor",
+      "Tanstack Query",
+    ],
+    category: "work",
+    isPrivate: true,
+  },
+  {
+    desc: "HappyBingo is also an online casino platform similar to Crazywin, offering a variety of games such as slots, table games, and live dealer experiences. I work on developing new features, improving UI components, and ensuring smooth performance across web and mobile platforms, including mobile optimization using Capacitor to deliver fully responsive and engaging player experiences.",
+    name: "HappyBingo",
+    linkSrc: "https://happybingo.ph/",
+
+    thumbnail: "/hb.png",
+    techStack: [
+      "Svelte",
+      "TailwindCSS",
+      "GraphQL",
+      "Capacitor",
+      "Tanstack Query",
+    ],
+    category: "work",
+    isPrivate: true,
+  },
+  {
+    desc: "Casino Admin Dashboard is a back-office management system built to handle core casino portal operations. It provides a high-level overview through a centralized dashboard, while dedicated modules manage member accounts, deposits and withdrawals, promotions and tournaments, compliance checks, and detailed reporting. The system is designed to streamline operations, improve monitoring, and support data-driven decision-making.",
+    name: "Admin",
+    linkSrc: "https://crazywin.ph/",
+
+    thumbnail: "/opex-admin.png",
+    techStack: ["NextJS", "TailwindCSS", "GraphQL", "Tanstack Query"],
+    category: "work",
+    isPrivate: true,
   },
   {
     desc: "Amy Store V2 is a next-generation eCommerce platform built with enhanced feature implementation, optimized performance — available on web and Android, with iOS coming soon.",
@@ -135,7 +225,9 @@ const items: CardProps[] = [
       "React Hook Form",
       "Zod",
       "Zustand",
+      "Apollo GraphQL",
     ],
+    category: "personal",
     inprogress: true,
   },
 ];
@@ -272,6 +364,36 @@ const techStyleMap: Record<string, TechStyle> = {
     chipBg: "rgba(62, 103, 177, 0.14)",
     chipBorder: "rgba(62, 103, 177, 0.38)",
   },
+  Svelte: {
+    icon: SiSvelte,
+    textColor: "#FF3E00",
+    chipBg: "rgba(255, 62, 0, 0.14)",
+    chipBorder: "rgba(255, 62, 0, 0.38)",
+  },
+  "Tanstack Query": {
+    icon: SiReactquery,
+    textColor: "#FF4154",
+    chipBg: "rgba(255, 65, 84, 0.14)",
+    chipBorder: "rgba(255, 65, 84, 0.38)",
+  },
+  "Apollo GraphQL": {
+    icon: SiApollographql,
+    textColor: "#311C87",
+    chipBg: "rgba(49, 28, 135, 0.14)",
+    chipBorder: "rgba(49, 28, 135, 0.38)",
+  },
+  "Framer Motion": {
+    icon: SiFramer,
+    textColor: "#0055FF",
+    chipBg: "rgba(0, 85, 255, 0.14)",
+    chipBorder: "rgba(0, 85, 255, 0.38)",
+  },
+  Storybook: {
+    icon: SiStorybook,
+    textColor: "#FF4785",
+    chipBg: "rgba(255, 71, 133, 0.14)",
+    chipBorder: "rgba(255, 71, 133, 0.38)",
+  },
 };
 
 const fallbackTechStyle: TechStyle = {
@@ -281,6 +403,11 @@ const fallbackTechStyle: TechStyle = {
 };
 
 const ExperienceAndCertificate = () => {
+  const workProjects = items.filter((project) => project.category === "work");
+  const personalProjects = items.filter(
+    (project) => project.category === "personal"
+  );
+
   return (
     <OuterContentWrapper
       justify={"unset"}
@@ -301,16 +428,16 @@ const ExperienceAndCertificate = () => {
         bg={"radial-gradient(circle, rgba(0, 96, 199, 0.24), transparent 65%)"}
         pointerEvents={"none"}
       />
-      {/* <Box
+      <Box
         position={"absolute"}
-        bottom={"-180px"}
-        left={"-140px"}
-        w={"380px"}
-        h={"380px"}
+        bottom={"-200px"}
+        left={"-160px"}
+        w={"440px"}
+        h={"440px"}
         borderRadius={"50%"}
-        bg={"radial-gradient(circle, rgba(0, 96, 199, 0.16), transparent 70%)"}
+        bg={"radial-gradient(circle, rgba(0, 96, 199, 0.18), transparent 70%)"}
         pointerEvents={"none"}
-      /> */}
+      />
       <InnerContentWrapper
         align={"center"}
         justify={"center"}
@@ -347,8 +474,8 @@ const ExperienceAndCertificate = () => {
           textAlign={"center"}
           color="rgba(255, 255, 255, 0.8)"
         >
-          Explore my work experience, including the projects I&apos;ve
-          completed.
+          A clear breakdown of projects delivered in professional roles and
+          projects I built personally for experimentation and growth.
         </Text>
 
         <Flex
@@ -357,9 +484,12 @@ const ExperienceAndCertificate = () => {
           gap={"12px"}
           mb={{ base: "28px", md: "40px" }}
         >
-          <StatPill label="Projects Built" value={`${items.length}+`} />
-          {/* <StatPill label="Focus Area" value="Frontend Engineering" /> */}
-          <StatPill label="Delivery" value="Web & Mobile" />
+          <StatPill label="Total Projects" value={`${items.length}`} />
+          <StatPill label="Work Projects" value={`${workProjects.length}`} />
+          <StatPill
+            label="Personal Projects"
+            value={`${personalProjects.length}`}
+          />
         </Flex>
 
         <Tabs variant="unstyled" w="full">
@@ -368,71 +498,86 @@ const ExperienceAndCertificate = () => {
             gap={{ base: "10px", md: "12px" }}
             mb={{ base: "28px", md: "48px" }}
             justifyContent={"center"}
+            flexWrap={"wrap"}
             w="fit-content"
             mx={"auto"}
             p={"6px"}
-            borderRadius={"full"}
+            borderRadius={"18px"}
             border={"1px solid rgba(255, 255, 255, 0.14)"}
             bg={"rgba(11, 17, 23, 0.75)"}
             backdropFilter={"blur(8px)"}
           >
-            {/* <Tab
+            <Tab
               _selected={{
                 color: "white",
-                fontWeight: 700,
-                bg: colors.primary[900],
+                bg: "rgba(0, 96, 199, 0.92)",
                 boxShadow: "0px 10px 24px rgba(0, 96, 199, 0.35)",
               }}
-              _hover={{ color: "white" }}
-              borderRadius={"full"}
-              px={{ base: "16px", md: "26px" }}
+              _hover={{ color: "white", bg: "rgba(255, 255, 255, 0.08)" }}
+              borderRadius={"12px"}
+              px={{ base: "14px", md: "20px" }}
               py={"10px"}
-              fontSize={{ base: "15px", md: "17px" }}
-              color={"rgba(255, 255, 255, 0.6)"}
+              fontSize={{ base: "13px", md: "15px" }}
+              color={"rgba(255, 255, 255, 0.7)"}
+              fontWeight={600}
             >
-              Work Experience
-            </Tab> */}
+              <Flex align={"center"} gap={"8px"}>
+                <Text>Work Experience Projects</Text>
+                <Badge
+                  bg={"rgba(255, 255, 255, 0.18)"}
+                  borderRadius={"full"}
+                  px={"8px"}
+                  fontSize={"11px"}
+                  color={"white"}
+                >
+                  {workProjects.length}
+                </Badge>
+              </Flex>
+            </Tab>
+            <Tab
+              _selected={{
+                color: "white",
+                bg: "rgba(0, 96, 199, 0.92)",
+                boxShadow: "0px 10px 24px rgba(0, 96, 199, 0.35)",
+              }}
+              _hover={{ color: "white", bg: "rgba(255, 255, 255, 0.08)" }}
+              borderRadius={"12px"}
+              px={{ base: "14px", md: "20px" }}
+              py={"10px"}
+              fontSize={{ base: "13px", md: "15px" }}
+              color={"rgba(255, 255, 255, 0.7)"}
+              fontWeight={600}
+            >
+              <Flex align={"center"} gap={"8px"}>
+                <Text>Personal Projects</Text>
+                <Badge
+                  bg={"rgba(255, 255, 255, 0.18)"}
+                  borderRadius={"full"}
+                  px={"8px"}
+                  fontSize={"11px"}
+                  color={"white"}
+                >
+                  {personalProjects.length}
+                </Badge>
+              </Flex>
+            </Tab>
           </TabList>
           <TabPanels>
             <TabPanel p={0}>
-              <SimpleGrid
-                columns={{ base: 1, lg: 2, xl: 3 }}
-                spacing={{ base: "20px", md: "24px" }}
-                w="full"
-              >
-                {items.map((d, idx) => {
-                  return (
-                    <Card key={`${d.name}-${idx}`} {...d} order={idx + 1} />
-                  );
-                })}
-              </SimpleGrid>
+              <ProjectCollectionPanel
+                sectionTag="Work Experience"
+                title="Projects Shipped in Professional Roles"
+                description="Frontend-heavy projects delivered for product teams, built for real users across web and mobile contexts."
+                items={workProjects}
+              />
             </TabPanel>
             <TabPanel p={0}>
-              <Flex
-                direction={"column"}
-                alignItems={"center"}
-                justifyContent={"center"}
-                minH={{ base: "240px", md: "300px" }}
-                border={"1px solid rgba(255, 255, 255, 0.14)"}
-                borderRadius={"24px"}
-                bg={
-                  "linear-gradient(180deg, rgba(26, 35, 45, 0.85), rgba(13, 19, 25, 0.9))"
-                }
-                p={{ base: "28px", md: "40px" }}
-                textAlign={"center"}
-              >
-                <Text size="header-6" mb="12px" color={"primary.900"}>
-                  CERTIFICATES IN PROGRESS
-                </Text>
-                <Text
-                  size="paragraph-md"
-                  maxW={"640px"}
-                  color={"rgba(255, 255, 255, 0.78)"}
-                >
-                  This section is being curated and will soon showcase my
-                  completed certifications with credential links.
-                </Text>
-              </Flex>
+              <ProjectCollectionPanel
+                sectionTag="Personal Builds"
+                title="Projects Built to Learn and Experiment"
+                description="Independent projects where I explored architecture, feature design, and fullstack execution outside client work."
+                items={personalProjects}
+              />
             </TabPanel>
           </TabPanels>
         </Tabs>
@@ -443,9 +588,64 @@ const ExperienceAndCertificate = () => {
 
 export default ExperienceAndCertificate;
 
+type ProjectCollectionPanelProps = {
+  sectionTag: string;
+  title: string;
+  description: string;
+  items: CardProps[];
+};
+
+const ProjectCollectionPanel: FC<ProjectCollectionPanelProps> = ({
+  sectionTag,
+  title,
+  description,
+  items,
+}) => {
+  return (
+    <Flex direction={"column"} gap={{ base: "18px", md: "24px" }}>
+      <Flex
+        direction={"column"}
+        gap={"10px"}
+        border={"1px solid rgba(255, 255, 255, 0.14)"}
+        borderRadius={"18px"}
+        bg={
+          "linear-gradient(180deg, rgba(22, 32, 44, 0.84), rgba(12, 18, 25, 0.92))"
+        }
+        p={{ base: "18px", md: "24px" }}
+      >
+        <Text
+          fontSize={"11px"}
+          letterSpacing={"0.13em"}
+          textTransform={"uppercase"}
+          color={"rgba(255, 255, 255, 0.64)"}
+        >
+          {sectionTag}
+        </Text>
+        <Text size="header-6" color={"white"}>
+          {title}
+        </Text>
+        <Text size="paragraph-sm" color={"rgba(255, 255, 255, 0.76)"}>
+          {description}
+        </Text>
+      </Flex>
+
+      <SimpleGrid
+        columns={{ base: 1, lg: 2, xl: 3 }}
+        spacing={{ base: "20px", md: "24px" }}
+        w="full"
+      >
+        {items.map((project, idx) => {
+          return (
+            <Card key={`${project.name}-${idx}`} {...project} order={idx + 1} />
+          );
+        })}
+      </SimpleGrid>
+    </Flex>
+  );
+};
+
 type EnhancedCardProps = CardProps & {
   order: number;
-  inprogress?: boolean;
 };
 
 const Card: FC<EnhancedCardProps> = ({
@@ -456,8 +656,25 @@ const Card: FC<EnhancedCardProps> = ({
   thumbnail,
   techStack,
   order,
+  category,
+  isPrivate = false,
   inprogress = false,
 }) => {
+  const titleInitial =
+    name
+      .trim()
+      .match(/[A-Za-z0-9]/)?.[0]
+      ?.toUpperCase() ?? "?";
+  const categoryLabel = category === "work" ? "Work Project" : "Personal Build";
+  const categoryTextColor =
+    category === "work" ? "rgba(189, 224, 255, 1)" : "rgba(188, 255, 230, 1)";
+  const categoryBorderColor =
+    category === "work"
+      ? "1px solid rgba(0, 96, 199, 0.5)"
+      : "1px solid rgba(16, 150, 108, 0.5)";
+  const categoryBgColor =
+    category === "work" ? "rgba(0, 96, 199, 0.22)" : "rgba(16, 150, 108, 0.22)";
+
   return (
     <Flex
       bg={
@@ -465,7 +682,7 @@ const Card: FC<EnhancedCardProps> = ({
       }
       direction={"column"}
       w="full"
-      minH={"440px"}
+      minH={"460px"}
       borderRadius={"20px"}
       p={{ base: "20px", md: "24px" }}
       border={"1px solid rgba(255, 255, 255, 0.1)"}
@@ -480,27 +697,51 @@ const Card: FC<EnhancedCardProps> = ({
       }}
     >
       <Flex
-        align={"center"}
+        align={"flex-start"}
         justify={"space-between"}
         mb={{ base: "16px", md: "20px" }}
         gap={"12px"}
       >
         <Flex align={"center"} gap={"12px"}>
-          <CustomNextImage
-            src={logoSrc}
-            borderRadius={"50%"}
-            overflow={"hidden"}
-            w={{ base: "52px", md: "58px" }}
-            h={{ base: "52px", md: "58px" }}
-            boxShadow={"0px 10px 24px rgba(0, 0, 0, 0.35)"}
-          />
+          {logoSrc ? (
+            <CustomNextImage
+              src={logoSrc}
+              borderRadius={"50%"}
+              overflow={"hidden"}
+              w={{ base: "52px", md: "58px" }}
+              h={{ base: "52px", md: "58px" }}
+              boxShadow={"0px 10px 24px rgba(0, 0, 0, 0.35)"}
+            />
+          ) : (
+            <Flex
+              w={{ base: "52px", md: "58px" }}
+              h={{ base: "52px", md: "58px" }}
+              borderRadius={"50%"}
+              align={"center"}
+              justify={"center"}
+              border={"1px solid rgba(120, 201, 255, 0.42)"}
+              bg={
+                "linear-gradient(180deg, rgba(0, 96, 199, 0.36), rgba(0, 96, 199, 0.16))"
+              }
+              boxShadow={"0px 10px 24px rgba(0, 0, 0, 0.35)"}
+            >
+              <Text
+                fontSize={{ base: "20px", md: "22px" }}
+                fontWeight={700}
+                color={"white"}
+                lineHeight={1}
+              >
+                {titleInitial}
+              </Text>
+            </Flex>
+          )}
           <Flex direction={"column"}>
             <Text
               size="label-md"
               fontSize={{ base: "17px", md: "20px" }}
               lineHeight={{ base: "22px", md: "28px" }}
             >
-              {name}
+              {name.trim()}
             </Text>
             <Text
               fontSize={"11px"}
@@ -511,33 +752,28 @@ const Card: FC<EnhancedCardProps> = ({
             </Text>
           </Flex>
         </Flex>
-        <Flex height={"full"}>
-          {inprogress && (
-            <Badge
-              borderRadius={"full"}
-              px={"10px"}
-              h="fit-content"
-              py={"4px"}
-              bg={"rgba(0, 96, 199, 0.2)"}
-              color={"rgba(180, 218, 255, 1)"}
-              border={"1px solid rgba(0, 96, 199, 0.45)"}
-              boxShadow={
-                "0px 0px 0px 1px rgba(120, 201, 255, 0.36), 0px 0px 18px rgba(0, 122, 255, 0.52)"
-              }
-              fontSize={"10px"}
-              letterSpacing={"0.08em"}
-            >
-              In progress
-            </Badge>
-          )}
+        <Flex direction={"column"} align={"flex-end"} gap={"8px"}>
+          <Badge
+            borderRadius={"full"}
+            px={"10px"}
+            py={"4px"}
+            h="fit-content"
+            bg={categoryBgColor}
+            color={categoryTextColor}
+            border={categoryBorderColor}
+            fontSize={"10px"}
+            letterSpacing={"0.08em"}
+          >
+            {categoryLabel}
+          </Badge>
         </Flex>
       </Flex>
 
       <Text
         size="paragraph-sm"
         color={"rgba(255, 255, 255, 0.76)"}
-        noOfLines={4}
-        minH={"80px"}
+        noOfLines={5}
+        minH={"96px"}
         title={desc}
       >
         {desc}
@@ -604,22 +840,60 @@ const Card: FC<EnhancedCardProps> = ({
         />
       </Flex>
 
-      <Link href={linkSrc} target="_blank" rel="noopener noreferrer">
-        <Button
-          variant={"unstyled"}
-          rightIcon={<MdOutlineArrowOutward />}
-          bg={"rgba(255, 255, 255, 0.92)"}
-          color={"rgba(12, 19, 26, 1)"}
-          borderRadius={"full"}
-          fontSize={"13px"}
-          fontWeight={700}
-          px={"16px"}
-          py={"10px"}
-          _hover={{ bg: "white", transform: "translateY(-1px)" }}
-        >
-          Visit Website
-        </Button>
-      </Link>
+      <Flex justifyContent={"space-between"} alignItems={"center"}>
+        {isPrivate ? (
+          <Badge
+            borderRadius={"full"}
+            px={"12px"}
+            py={"6px"}
+            w={"fit-content"}
+            bg={"rgba(255, 187, 70, 0.16)"}
+            color={"rgba(255, 220, 162, 1)"}
+            border={"1px solid rgba(255, 187, 70, 0.45)"}
+            fontSize={"11px"}
+            letterSpacing={"0.08em"}
+            textTransform={"uppercase"}
+          >
+            Private
+          </Badge>
+        ) : (
+          <Link href={linkSrc} target="_blank" rel="noopener noreferrer">
+            <Button
+              variant={"unstyled"}
+              rightIcon={<MdOutlineArrowOutward />}
+              bg={"rgba(255, 255, 255, 0.92)"}
+              color={"rgba(12, 19, 26, 1)"}
+              borderRadius={"full"}
+              fontSize={"13px"}
+              fontWeight={700}
+              px={"16px"}
+              py={"10px"}
+              _hover={{ bg: "white", transform: "translateY(-1px)" }}
+            >
+              Visit Site
+            </Button>
+          </Link>
+        )}
+
+        {inprogress && (
+          <Badge
+            borderRadius={"full"}
+            px={"10px"}
+            h="fit-content"
+            py={"4px"}
+            bg={"rgba(0, 96, 199, 0.2)"}
+            color={"rgba(180, 218, 255, 1)"}
+            border={"1px solid rgba(0, 96, 199, 0.45)"}
+            boxShadow={
+              "0px 0px 0px 1px rgba(120, 201, 255, 0.36), 0px 0px 18px rgba(0, 122, 255, 0.52)"
+            }
+            fontSize={"10px"}
+            letterSpacing={"0.08em"}
+          >
+            In progress
+          </Badge>
+        )}
+      </Flex>
     </Flex>
   );
 };

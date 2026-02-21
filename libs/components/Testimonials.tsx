@@ -57,7 +57,7 @@ const testimonialItems: TestimonialProps[] = [
     job: "Senior Frontend Engineer",
     linkedinUrl: "https://www.linkedin.com/in/jc-go/",
     testimony:
-      "I worked with him as a fellow Frontend Developer, and he is a great teammate to collaborate with. He writes clean and maintainable code, communicates clearly, and is always open to feedback. When working on features or fixing bugs, he stays proactive and makes sure everything is implemented properly. He is reliable, easy to work with, and focused on delivering quality results as a team.",
+      "I had the privilege of working with Jade Kenneth at ScaleForge, and he’s the kind of Frontend Engineer every team needs. He delivers clean, scalable, and user-focused solutions with strong attention to detail. Jade is reliable, communicates clearly, and takes ownership of his work. He brings a calm, problem-solving mindset and a positive, professional attitude that makes collaboration easy and effective.",
   },
 ];
 

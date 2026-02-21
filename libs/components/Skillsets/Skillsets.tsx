@@ -29,6 +29,7 @@ import {
   SiRedux,
   SiSocketdotio,
   SiStrapi,
+  SiSvelte,
   SiTypescript,
   SiXendit,
   SiZod,
@@ -60,13 +61,13 @@ const skillItems: SkillItem[] = [
   { name: "Socket.IO", icon: SiSocketdotio, color: "#FFFFFF" },
   { name: "Next.js", icon: RiNextjsFill, color: "#FFFFFF" },
   { name: "TypeScript", icon: SiTypescript, color: "rgb(47,116,192)" },
-  { name: "Apollo GraphQL", icon: SiApollographql, color: "rgb(69,39,188)" },
+  { name: "Apollo GraphQL", icon: SiApollographql, color: "#311C87" },
   { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "rgb(56,189,248)" },
   { name: "Chakra UI", icon: SiChakraui, color: "rgb(93,201,202)" },
-  { name: "React Query", icon: SiReactquery, color: "rgb(255,71,89)" },
+  { name: "React Query", icon: SiReactquery, color: "#FF4154" },
   { name: "Lighthouse", icon: SiLighthouse, color: "rgb(255,107,57)" },
   { name: "Strapi", icon: SiStrapi, color: "rgb(79,75,255)" },
-  { name: "Framer Motion", icon: SiFramer, color: "rgb(79,75,255)" },
+  { name: "Framer Motion", icon: SiFramer, color: "#0055FF" },
   {
     name: "Xendit",
     icon: SiXendit,
@@ -85,6 +86,7 @@ const skillItems: SkillItem[] = [
   },
   { name: "React Hook Form", icon: SiReacthookform, color: "rgb(79,75,255)" },
   { name: "Zod", icon: SiZod, color: "rgb(79,75,255)" },
+  { name: "Svelte", icon: SiSvelte, color: "#FF3E00" },
 ];
 
 const Skillsets = () => {
