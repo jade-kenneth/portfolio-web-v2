@@ -47,7 +47,7 @@ const testimonialItems: TestimonialProps[] = [
     job: "UI/UX Designer",
     linkedinUrl: "https://www.linkedin.com/in/jadeyc/",
     testimony:
-      "I worked with Jade Kenneth Darunday, and I can confidently vouch for him as a developer. He is friendly, approachable, and easy to work with. As a UI/UX Designer, I appreciated how he not only followed the design but also suggested ideas that improved the overall user experience. He works on websites, backend systems, and mobile apps, making him flexible and reliable across different parts of a project. He takes initiative and consistently delivers quality work. Any team would be lucky to have him.",
+      "I worked with Jade Kenneth, and I can confidently vouch for him as a developer. He is friendly, approachable, and easy to work with. As a UI/UX Designer, I appreciated how he not only followed the design but also suggested ideas that improved the overall user experience. He works on websites, backend systems, and mobile apps, making him flexible and reliable across different parts of a project. He takes initiative and consistently delivers quality work. Any team would be lucky to have him.",
   },
   {
     imageSrc: "/jd.jpeg",
